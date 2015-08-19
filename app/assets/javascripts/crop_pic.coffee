@@ -8,9 +8,9 @@ jQuery(document).ready ($) ->
         $('#uploaded_img').attr 'src', e.target.result
         $('.ci-image-wrapper img').show()
         $('#uploaded_img').cropimg
-          maxContainerWidth: 640
-          resultWidth: 640
-          resultHeight: 480
+          maxContainerWidth: 600
+          resultWidth: 600
+          resultHeight: 600
           showBtnTips: false
           zoomDelay: 400
           mouseWheelZoomTimes: 10

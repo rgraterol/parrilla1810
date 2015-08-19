@@ -11,20 +11,37 @@
         %input#w{:name => "w", :style => "display:none;", :type => "text", :value => "0"}/
         %input#h{:name => "h", :style => "display:none;", :type => "text", :value => "0"}/
         %input#upload_button.submit{:style => "display:none;", :type => "submit", :value => "Upload"}/
-      %button#upload_photo_button{style: 'display:none;'}
-        Upload
+
   / ROW DE CANVAS Y VIDEO
   .row
-    .col-xs-12
-      #portrait
-        #take_photo.pic_frame
-          %video#video{:autoplay => "", :height => "480", :width => "640"}
-          .ci-main-canvas
-            #canvas_container.ci-canvas-wrapper
-              %canvas#canvas.ui-widget-content{:height => "480", :style => "", :width => "640"}
-            #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
-          #img_container
-          #message
+    / COLUMNA DE CANVAS Y VIDEO
+    .col-xs-7
+      .portrait
+        .frame
+          = image_tag 'cuadros/01-cuadro.png', class: 'cuadro'
+          = image_tag 'pinturas/01-loco.png', class: 'arte', style: 'display:none'
+          .pic_frame
+            %video#video{:autoplay => "", :height => "295", :width => "355"}
+            .ci-main-canvas
+              #canvas_container.ci-canvas-wrapper
+                %canvas#canvas.ui-widget-content{:height => "295", :style => "", :width => "355"}
+              #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
+            #img_container
+            #message
+    / COLUMNA DE CAMBIAR ARTE Y MARCO
+    .col-xs-3.col-xs-offset-2
+      .row
+        .col-xs-12
+          %button#cambiar_arte
+            Cambia el Arte
+      .row
+        .col-xs-12
+          %button#upload_photo_button{style: 'display:none;'}
+            Compartir
+      .row
+        .col-xs-12
+          %button#cambiar_marco
+            Cambia el Marco
   / ROW DE BOTONES DOWN
   .row
     .col-xs-12

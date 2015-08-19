@@ -105,7 +105,7 @@ jQuery(document).ready ($) ->
 
     document.getElementById('snap').addEventListener 'click', ->
       $('#message').empty()
-      context.drawImage video, 0, 0, 640, 480
+      context.drawImage video, 0, 0, 355, 265
       document.getElementById('video').style.display = 'none'
       document.getElementById('retake').style.display = 'initial'
       document.getElementById('snap').style.display = 'none'

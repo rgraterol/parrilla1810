@@ -13,9 +13,39 @@ html, body{
     margin-top: 15%;
 }
 
+.portrait {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.frame {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.cuadro {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.arte {
+    position: absolute;
+    z-index: 5;
+    left: 25px;
+    pointer-events: none;
+}
+
 .pic_frame {
-    height: 600px;
-    width: 480px;
+    height: 295px;
+    width: 355px;
+    margin-left: 23%;
+    position: absolute;
+    z-index: 1;
+    top: 120px;
 }
 
 #buttons {
@@ -24,25 +54,8 @@ html, body{
     text-align: center;
 }
 
-#portrait {
-    position: relative;
-    height: 100%;
-}
-#take_photo {    
-    width: 50%;
-    margin-left: 25%;
-    text-align: center;
-    height: 70%;
-}
 
-#frame {
-    position: absolute;
-    width: 50%;
-    left: 25%;
-    z-index: 10;
-    text-align: center;
-    pointer-events: none;
-}
+
 
 #porta {
     position: absolute;
@@ -55,8 +68,3 @@ html, body{
 #container {
     position: relative;
 }
-
-#video {
-    top: 130px;
-}
-    
