@@ -1,0 +1,33 @@
+.container
+  / ROW DE BOTONES UP
+  .row.row_up
+    .col-xs-3.col-xs-offset-3
+      %a#camara_on.btn.btn-default{:href => "#"} Encender Cámara
+    .col-xs-3
+      = form_for :upload, url: upload_img_path,  html: { multipart: true }, remote: true do | f |
+        = f.file_field :file_input, id: 'file-input'
+        %input#x{:name => "x", :style => "display:none;", :type => "text", :value => "0"}/
+        %input#y{:name => "y", :style => "display:none;", :type => "text", :value => "0"}/
+        %input#w{:name => "w", :style => "display:none;", :type => "text", :value => "0"}/
+        %input#h{:name => "h", :style => "display:none;", :type => "text", :value => "0"}/
+        %input#upload_button.submit{:style => "display:none;", :type => "submit", :value => "Upload"}/
+      %button#upload_photo_button{style: 'display:none;'}
+        Upload
+  / ROW DE CANVAS Y VIDEO
+  .row
+    .col-xs-12
+      #portrait
+        #take_photo.pic_frame
+          %video#video{:autoplay => "", :height => "480", :width => "640"}
+          .ci-main-canvas
+            #canvas_container.ci-canvas-wrapper
+              %canvas#canvas.ui-widget-content{:height => "480", :style => "", :width => "640"}
+            #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
+          #img_container
+          #message
+  / ROW DE BOTONES DOWN
+  .row
+    .col-xs-12
+      #buttons
+        %button#snap Tomar Foto
+        %button#retake.sexyButton{:style => "display:none;"} Retomar
