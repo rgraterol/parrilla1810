@@ -5,4 +5,4 @@
 }
 .ci-main-canvas .ci-canvas-wrapper:hover {cursor:move;}
 
-.ci-main-canvas .ci-canvas-wrapper canvas {position:absolute;z-index:1;top:0px;left:0px;display:block !important;min-width:355px !important;}
+.ci-main-canvas .ci-canvas-wrapper canvas {position:absolute;z-index:1;top:15px;left:0px;min-width:355px !important;}

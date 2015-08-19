@@ -79,7 +79,7 @@ jQuery(document).ready ($) ->
       document.getElementById('retake').style.display = 'none'
       document.getElementById('snap').style.display = 'initial'
       #document.getElementById("canvas").style.display="none";
-      $('.ci-main-canvas').hide()
+      $('#canvas').hide()
       reset_form_element $('#file-input')
       $('#upload_button').hide()
       $('#img_container').empty()
@@ -109,8 +109,8 @@ jQuery(document).ready ($) ->
       document.getElementById('video').style.display = 'none'
       document.getElementById('retake').style.display = 'initial'
       document.getElementById('snap').style.display = 'none'
-      $('.ci-main-canvas').show()
       $('#img_container').empty()
+      $('#canvas').show()
       $('#upload_photo_button').show()
       return
     document.getElementById('retake').addEventListener 'click', ->
@@ -118,7 +118,7 @@ jQuery(document).ready ($) ->
       document.getElementById('video').style.display = 'initial'
       document.getElementById('retake').style.display = 'none'
       document.getElementById('snap').style.display = 'initial'
-      $('.ci-main-canvas').hide()
+      $('#canvas').hide()
       $('#upload_button').hide()
       $('#img_container').empty()
       $('#upload_photo_button').hide()

@@ -15,21 +15,20 @@
   / ROW DE CANVAS Y VIDEO
   .row
     / COLUMNA DE CANVAS Y VIDEO
-    .col-xs-7
+    .col-xs-10
       .portrait
         .frame
-          = image_tag 'cuadros/01-cuadro.png', class: 'cuadro'
-          = image_tag 'pinturas/01-loco.png', class: 'arte', style: 'display:none'
-          .pic_frame
-            %video#video{:autoplay => "", :height => "295", :width => "355"}
-            .ci-main-canvas
-              #canvas_container.ci-canvas-wrapper
-                %canvas#canvas.ui-widget-content{:height => "295", :style => "", :width => "355"}
-              #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
-            #img_container
-            #message
+          .arte{style: 'display:none;'}
+        .pic_frame
+          .ci-main-canvas
+            #canvas_container.ci-canvas-wrapper
+              %video#video{:autoplay => "", :height => "295", :width => "355"}
+              %canvas#canvas.ui-widget-content{:height => "295", :style => "", :width => "355"}
+            #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
+          #img_container
+          #message
     / COLUMNA DE CAMBIAR ARTE Y MARCO
-    .col-xs-3.col-xs-offset-2
+    .col-xs-2
       .row
         .col-xs-12
           %button#cambiar_arte
