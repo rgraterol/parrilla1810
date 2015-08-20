@@ -15,36 +15,48 @@ html, body{
 
 .portrait {
     position: relative;
-    height: 700px;
-    width: 100%;
+    height: 358px;
+    width: 355px;
     overflow-y: hidden;
+    overflow-x: hidden;
+    left:50%;
 }
 
-.frame {
-    background: url(cuadros/01-cuadro.png)  no-repeat scroll 0 0 transparent;
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 600px;
-    z-index: 100;
-}
 
 .arte {
     background: url(pinturas/01-loco.png)  no-repeat scroll 0 0 transparent;
     pointer-events: none;
     position: absolute;
-    width: 100%;
+    width: 355px;
+    height: 358px;
     z-index: 50;
-    height: 600px;
 }
 
 .pic_frame {
     position: absolute;
     width: 355px;
     z-index: 1;
-    height: 300px;
-    top: 150px;
-    left: 122px
+    height: 358px;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-content {
+    background-color: rgba(70, 70, 70, 0.29) !important;
+}
+
+.thumb {
+    margin-bottom: 30px;
+}
+
+.thumbnail {
+    background-color: rgba(218, 218, 218, 0.19) !important;
+}
+
+a.thumbnail:focus, a.thumbnail:hover {
+    border-color: #EC1A1A;
 }
 
 #buttons {

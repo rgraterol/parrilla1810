@@ -1,0 +1,28 @@
+/ MODAL CUADROS
+.modal.fade.bs-cuadros-modal-lg{"aria-labelledby" => "cuadrosModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        .row
+          .col-xs-12
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#frame01{:href => "#", "aria-label" => "Frame 01", "data-dismiss" => "modal"}
+                = image_tag 'cuadros/01-frame.png', alt: 'Frame 01', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#frame02{:href => "#", "aria-label" => "Frame 02", "data-dismiss" => "modal"}
+                = image_tag 'cuadros/02-frame.png', alt: 'Frame 02', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#frame03{:href => "#", "aria-label" => "Frame 03", "data-dismiss" => "modal"}
+                = image_tag 'cuadros/03-frame.png', alt: 'Frame 03', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#frame04{:href => "#", "aria-label" => "Frame 04", "data-dismiss" => "modal"}
+                = image_tag 'cuadros/04-frame.png', alt: 'Frame 04', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#frame05{:href => "#", "aria-label" => "Frame 05", "data-dismiss" => "modal"}
+                = image_tag 'cuadros/05-frame.png', alt: 'Frame 05', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#frame06{:href => "#", "aria-label" => "Frame 06", "data-dismiss" => "modal"}
+                = image_tag 'cuadros/06-frame.png', alt: 'Frame 06', class: 'img-responsive'

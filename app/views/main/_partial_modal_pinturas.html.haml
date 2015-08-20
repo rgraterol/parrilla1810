@@ -1,0 +1,28 @@
+/ MODAL ARTE
+.modal.fade.bs-pinturas-modal-lg{"aria-labelledby" => "pinturasModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        .row
+          .col-xs-12
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#pintura01{:href => "#", "aria-label" => "Pintura 01", "data-dismiss" => "modal"}
+                = image_tag 'pinturas/01-loco.png', alt: 'Pintura 01', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#pintura02{:href => "#", "aria-label" => "Pintura 02", "data-dismiss" => "modal"}
+                = image_tag 'pinturas/02-loco.png', alt: 'Pintura 02', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#pintura03{:href => "#", "aria-label" => "Pintura 03", "data-dismiss" => "modal"}
+                = image_tag 'pinturas/03-loco.png', alt: 'Pintura 03', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#pintura04{:href => "#", "aria-label" => "Pintura 04", "data-dismiss" => "modal"}
+                = image_tag 'pinturas/04-mina.png', alt: 'Pintura 04', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#pintura05{:href => "#", "aria-label" => "Pintura 05", "data-dismiss" => "modal"}
+                = image_tag 'pinturas/05-mina.png', alt: 'Pintura 05', class: 'img-responsive'
+            .col-lg-4.col-md-4.col-xs-6.thumb
+              %a.thumbnail#pintura06{:href => "#", "aria-label" => "Pintura 06", "data-dismiss" => "modal"}
+                = image_tag 'pinturas/06-mina.png', alt: 'Pintura 06', class: 'img-responsive'

@@ -1,0 +1,53 @@
+.frame01 {
+    background: url(cuadros/01-frame.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 100;
+}
+
+.frame02 {
+    background: url(cuadros/02-frame.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 100;
+}
+
+.frame03 {
+    background: url(cuadros/03-frame.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 100;
+}
+
+.frame04 {
+    background: url(cuadros/04-frame.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 100;
+}
+
+.frame05 {
+    background: url(cuadros/05-frame.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 100;
+}
+
+.frame06 {
+    background: url(cuadros/06-frame.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 100;
+}

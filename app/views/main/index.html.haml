@@ -10,28 +10,31 @@
         %input#y{:name => "y", :style => "display:none;", :type => "text", :value => "0"}/
         %input#w{:name => "w", :style => "display:none;", :type => "text", :value => "0"}/
         %input#h{:name => "h", :style => "display:none;", :type => "text", :value => "0"}/
-        %input#upload_button.submit{:style => "display:none;", :type => "submit", :value => "Upload"}/
+        /%input#upload_button.submit{:style => "display:none;", :type => "submit", :value => "Upload"}/
 
   / ROW DE CANVAS Y VIDEO
   .row
     / COLUMNA DE CANVAS Y VIDEO
-    .col-xs-10
-      .portrait
-        .frame
-          .arte{style: 'display:none;'}
+    .col-xs-8
+      .portrait#canvas_video_div
+        #pintura_div{style: 'display:none;'}
+        .frame01#frame_div
         .pic_frame
           .ci-main-canvas
             #canvas_container.ci-canvas-wrapper
-              %video#video{:autoplay => "", :height => "295", :width => "355"}
-              %canvas#canvas.ui-widget-content{:height => "295", :style => "", :width => "355"}
+              %video#video{:autoplay => "", :height => "358", :width => "355"}
+              %canvas#canvas.ui-widget-content{:height => "358", :style => "", :width => "355"}
             #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
           #img_container
           #message
+    .col-xs-8#html2canvas_col{style: 'display:none'}
+      .portrait
+        #html2canvas_output
     / COLUMNA DE CAMBIAR ARTE Y MARCO
-    .col-xs-2
+    .col-xs-4
       .row
         .col-xs-12
-          %button#cambiar_arte
+          %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
             Cambia el Arte
       .row
         .col-xs-12
@@ -39,11 +42,18 @@
             Compartir
       .row
         .col-xs-12
-          %button#cambiar_marco
+          %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button"}
             Cambia el Marco
+
   / ROW DE BOTONES DOWN
   .row
     .col-xs-12
       #buttons
-        %button#snap Tomar Foto
+        %button#snap{style: 'display:none'} Tomar Foto
         %button#retake.sexyButton{:style => "display:none;"} Retomar
+
+
+= render partial: 'partial_modal_pinturas'
+
+= render partial: 'partial_modal_cuadros'
+

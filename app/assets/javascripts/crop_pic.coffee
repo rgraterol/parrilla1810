@@ -31,6 +31,8 @@ jQuery(document).ready ($) ->
     return
 
   $('#file-input').change ->
+    $('#canvas_video_div').show()
+    $('#html2canvas_col').hide()
     $('#video').hide()
     $('#retake').hide()
     $('#snap').hide()
@@ -53,7 +55,9 @@ jQuery(document).ready ($) ->
       $('#img_container').empty()
       $('#img_container').prepend '<img id="uploaded_img" src="#" />'
       $('.ci-main-canvas').hide()
-      $('#upload_button').show()
+      $('#upload_photo_button').show()
+      $('#snap').hide()
+      $('#retake').hide()
       readURL this
     return
   return

@@ -1,0 +1,53 @@
+.pintura01 {
+    background: url(pinturas/01-loco.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 50;
+}
+
+.pintura02 {
+    background: url(pinturas/02-loco.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 50;
+}
+
+.pintura03 {
+    background: url(pinturas/03-loco.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 50;
+}
+
+.pintura04 {
+    background: url(pinturas/04-mina.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 50;
+}
+
+.pintura05 {
+    background: url(pinturas/05-mina.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 50;
+}
+
+.pintura06 {
+    background: url(pinturas/06-mina.png)  no-repeat scroll 0 0 transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 355px;
+    height: 358px;
+    z-index: 50;
+}

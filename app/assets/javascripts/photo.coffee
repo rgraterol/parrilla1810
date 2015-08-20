@@ -1,18 +1,5 @@
 jQuery(document).ready ($) ->
 
-  $('#upload_photo_button').click ->
-    html2canvas $('#canvas_container'), onrendered: (canvas) ->
-      theCanvas = canvas
-      document.body.appendChild canvas
-      # Convert and download as image
-      Canvas2Image.convertToPNG canvas
-      $('#img_canvas_output').append canvas
-      $('#img_canvas_output').show()
-      # Clean up
-      #document.body.removeChild(canvas);
-      return
-    return
-
   UploadPic = ->
     # Generate the image data
     Pic = document.getElementById('canvas').toDataURL('image/png')
@@ -83,7 +70,11 @@ jQuery(document).ready ($) ->
       reset_form_element $('#file-input')
       $('#upload_button').hide()
       $('#img_container').empty()
+      $('#canvas_container').show()
+      $('.ci-main-canvas').show()
       $('#upload_photo_button').hide()
+      $('#canvas_video_div').show()
+      $('#html2canvas_col').hide()
       return
 
     ###$('#file-input').change(function(e) {
@@ -112,6 +103,8 @@ jQuery(document).ready ($) ->
       $('#img_container').empty()
       $('#canvas').show()
       $('#upload_photo_button').show()
+      $('#canvas_video_col').show()
+      $('#html2canvas_col').hide()
       return
     document.getElementById('retake').addEventListener 'click', ->
       $('#message').empty()
@@ -122,6 +115,8 @@ jQuery(document).ready ($) ->
       $('#upload_button').hide()
       $('#img_container').empty()
       $('#upload_photo_button').hide()
+      $('#canvas_video_col').show()
+      $('#html2canvas_col').hide()
       return
     return
   ), false
