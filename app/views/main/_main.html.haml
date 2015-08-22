@@ -1,0 +1,48 @@
+
+.row
+  .col-xs-12
+    .container
+      .row
+        .col-xs-3.text-right
+          .row
+            .col-xs-12
+              Nombre del Usuario
+          .row
+            .col-xs-12
+              = image_tag 'pantalla_2/adorno_izquierdo.png', class: 'img-responsive adorno_izquierdo'
+          .row
+            .col-xs-12
+              = image_tag 'pantalla_2/texto.png', class: 'img-responsive'
+        .col-xs-6.text-center
+          .row
+            .col-xs-12
+              .portrait#canvas_video_div
+                #pintura_div{style: 'display:none;'}
+                .frame01#frame_div
+                .pic_frame
+                  .ci-main-canvas
+                    #canvas_container.ci-canvas-wrapper
+                      %video#video{:autoplay => "", :height => "358", :width => "355"}
+                      %canvas#canvas.ui-widget-content{:height => "358", :style => "", :width => "355"}
+                    #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
+                  #img_container
+                  #message
+            .col-xs-12#html2canvas_col{style: 'display:none'}
+              .portrait
+                #html2canvas_output
+
+        .col-xs-3.text-center
+          .row
+            .col-xs-12
+              = form_for :upload, url: upload_img_path,  html: { multipart: true }, remote: true do | f |
+                .file_input_div
+                  %label.label_file_input{for: 'file-input'}
+                    = image_tag 'pantalla_2/subir_imagen.png', class: 'file-input-img'
+                  = f.file_field :file_input, id: 'file-input', class: 'file_input'
+          .row
+            .col-xs-12
+              = image_tag 'pantalla_2/adorno_derecho.png'
+          .row
+            .col-xs-12
+              %button#camara_on
+                = image_tag 'pantalla_2/encender_camara.png', class: 'img-responsive'

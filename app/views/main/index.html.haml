@@ -1,59 +1,17 @@
-.container
-  / ROW DE BOTONES UP
-  .row.row_up
-    .col-xs-3.col-xs-offset-3
-      %a#camara_on.btn.btn-default{:href => "#"} Encender Cámara
-    .col-xs-3
-      = form_for :upload, url: upload_img_path,  html: { multipart: true }, remote: true do | f |
-        = f.file_field :file_input, id: 'file-input'
-        %input#x{:name => "x", :style => "display:none;", :type => "text", :value => "0"}/
-        %input#y{:name => "y", :style => "display:none;", :type => "text", :value => "0"}/
-        %input#w{:name => "w", :style => "display:none;", :type => "text", :value => "0"}/
-        %input#h{:name => "h", :style => "display:none;", :type => "text", :value => "0"}/
-        /%input#upload_button.submit{:style => "display:none;", :type => "submit", :value => "Upload"}/
+.row.luces_row#luces_row
+  .col-xs-12
+    .luces
 
-  / ROW DE CANVAS Y VIDEO
+.vcenter#main_div
+  = render partial: 'pantalla_1'
+  //= render partial: 'main'
+.vcenter#loading_div{style: 'display:none;'}
   .row
-    / COLUMNA DE CANVAS Y VIDEO
-    .col-xs-8
-      .portrait#canvas_video_div
-        #pintura_div{style: 'display:none;'}
-        .frame01#frame_div
-        .pic_frame
-          .ci-main-canvas
-            #canvas_container.ci-canvas-wrapper
-              %video#video{:autoplay => "", :height => "358", :width => "355"}
-              %canvas#canvas.ui-widget-content{:height => "358", :style => "", :width => "355"}
-            #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
-          #img_container
-          #message
-    .col-xs-8#html2canvas_col{style: 'display:none'}
-      .portrait
-        #html2canvas_output
-    / COLUMNA DE CAMBIAR ARTE Y MARCO
-    .col-xs-4
-      .row
-        .col-xs-12
-          %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
-            Cambia el Arte
-      .row
-        .col-xs-12
-          %button#upload_photo_button{style: 'display:none;'}
-            Compartir
-      .row
-        .col-xs-12
-          %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button"}
-            Cambia el Marco
-
-  / ROW DE BOTONES DOWN
-  .row
-    .col-xs-12
-      #buttons
-        %button#snap{style: 'display:none'} Tomar Foto
-        %button#retake.sexyButton{:style => "display:none;"} Retomar
+    .col-xs-12.text-center
+      %i.fa.fa-circle-o-notch.fa-5x.fa-spin
 
 
-= render partial: 'partial_modal_pinturas'
 
-= render partial: 'partial_modal_cuadros'
+
+
 

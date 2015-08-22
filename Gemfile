@@ -50,3 +50,5 @@ gem 'carrierwave'
 gem 'responders', '~> 2.0'
 
 gem 'remotipart', '~> 1.2'
+
+gem 'font-awesome-rails', '4.3.0.0'

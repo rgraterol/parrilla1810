@@ -26,7 +26,7 @@ jQuery(document).ready ($) ->
     e.unwrap()
     return
 
-  window.addEventListener 'DOMContentLoaded', (->
+  load_video_canvas = ->
     # Grab elements, create settings, etc.
     canvas = document.getElementById('canvas')
     context = canvas.getContext('2d')
@@ -78,7 +78,7 @@ jQuery(document).ready ($) ->
       return
 
     ###$('#file-input').change(function(e) {
-    	document.getElementById("video").style.display="none";
+      document.getElementById("video").style.display="none";
            document.getElementById("retake").style.display="none";
            document.getElementById("snap").style.display="none";
            var file = e.target.files[0],
@@ -119,7 +119,6 @@ jQuery(document).ready ($) ->
       $('#html2canvas_col').hide()
       return
     return
-  ), false
-  return
+
 
 
