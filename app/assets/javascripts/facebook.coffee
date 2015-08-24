@@ -1,3 +1,4 @@
+user = ''
 jQuery(document).ready ($) ->
   $('#boton_facebook').click ->
     FB.getLoginStatus (response) ->
@@ -27,7 +28,8 @@ facebook_functions = ->
         type: 'POST'
         dataType: 'HTML'
         success: (data) ->
-          pantalla_2(user, data)
+          pantalla_2(data)
+          upload_pic()
         error: (data) ->
           console.log 'ERROR EXECUTING FIRST AJAX'
       return
@@ -35,6 +37,7 @@ facebook_functions = ->
     return
 
 ###############  PHOTO ###############
+
 reset_form_element = (e) ->
   e.wrap('<form>').closest('form').get(0).reset()
   e.unwrap()
@@ -104,6 +107,7 @@ load_video_canvas = ->
     $('#upload_photo_button').show()
     $('#canvas_video_col').show()
     $('#html2canvas_col').hide()
+    pantalla_3()
     return
   document.getElementById('retake').addEventListener 'click', ->
     $('#message').empty()
@@ -116,10 +120,12 @@ load_video_canvas = ->
     $('#upload_photo_button').hide()
     $('#canvas_video_col').show()
     $('#html2canvas_col').hide()
+    pantalla_3_hide()
     return
   return
 
 ###############  DRAGGABLE ###############
+
 draggable = ->
   $('#canvas').draggable()
   return
@@ -223,6 +229,7 @@ change_pinturas = ->
     $('#pintura_div').hide()
 
 ###############  CHANGE FRAMES ###############
+
 change_frames = ->
   $('#frame01').click ->
     $('#frame_div').removeClass()
@@ -248,39 +255,9 @@ change_frames = ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame06')
 
-############### UPLOAD PIC #####################
-upload_pic = ->
-  $('#upload_photo_button').click ->
-    $('#html2canvas_output').empty()
-    $('#retake').hide()
-    $('#snap').hide()
-    html2canvas $('#canvas_video_div'), onrendered: (canvas) ->
-      theCanvas = canvas
-      document.body.appendChild canvas
-      dataURL = canvas.toDataURL('image/png')
-      console.log(dataURL)
-      # Convert and download as image
-      Canvas2Image.convertToPNG canvas
-      $('#canvas_video_div').hide()
-      $('#html2canvas_output').append canvas
-      $('#html2canvas_col').show()
-      $.ajax
-        url: '/upload_img'
-        type: 'POST'
-        dataType: 'json'
-        data:
-          img: dataURL
-        success: (data) ->
-          console.log 'HOLA'
-        error: (data) ->
-          console.log 'SOMETHING HAPPENED'
-      return
-    return
-
-
 ########### PANTALLA 2 #################3
 
-pantalla_2 = (user, data) ->
+pantalla_2 = (data) ->
   $('#main_div').empty()
   $('#main_div').append data
   $('#loading_div').hide()
@@ -307,3 +284,56 @@ pantalla_3 = ->
   $('#camara_on').hide()
   $('#cambiar_marco').show()
   $('#row_compartir').show()
+
+pantalla_3_hide = ->
+  $('#row_compartir').hide()
+
+
+########## COMPARTIR EN FACEBOOK ##########
+facebook_share = (url_imagen) ->
+  FB.ui {
+    method: 'feed'
+    link: url_imagen
+    caption: 'Super Cerdo'
+    picture: url_imagen
+    description: 'Aunque somos super distintos, cuando el sabor juega de local nos juntamos en la parrilla ¿Te prendes con unas costillitas Super Cerdo?'
+  }, (response) ->
+
+    return
+
+
+upload_pic = ->
+
+  $('#boton_compartir').click ->
+    $('#html2canvas_output').empty()
+    $('#retake').hide()
+    $('#snap').hide()
+    html2canvas $('#canvas_video_div'), onrendered: (canvas) ->
+      theCanvas = canvas
+      document.body.appendChild canvas
+      dataURL = canvas.toDataURL('image/png')
+      # Convert and download as image
+      Canvas2Image.convertToPNG canvas
+      $('#canvas_video_div').hide()
+      $('#html2canvas_output').append canvas
+      $('#html2canvas_col').show()
+      $.ajax
+        url: '/upload_img'
+        type: 'POST'
+        dataType: 'json'
+        data:
+          img: dataURL
+          email: user.email
+        success: (data) ->
+          if data == 'max_pics_reached'
+            console.log 'max_pics_reached'
+          else if data == 'false'
+            console.log 'error on upload'
+          else
+            console.log data
+            img_url =  data
+            facebook_share(img_url)
+        error: (data) ->
+          console.log 'ERROR 2AJX'
+      return
+    return
