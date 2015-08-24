@@ -33,7 +33,7 @@
   .col-xs-4
     .row
       .col-xs-12
-        %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
+        %button#cambiar_arte
           Cambia el Arte
     .row
       .col-xs-12
@@ -41,7 +41,7 @@
           Compartir
     .row
       .col-xs-12
-        %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button"}
+
           Cambia el Marco
 
 / ROW DE BOTONES DOWN
@@ -52,6 +52,3 @@
       %button#retake.sexyButton{:style => "display:none;"} Retomar
 
 
-= render partial: 'partial_modal_pinturas'
-
-= render partial: 'partial_modal_cuadros'

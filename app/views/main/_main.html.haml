@@ -3,17 +3,20 @@
   .col-xs-12
     .container
       .row
-        .col-xs-3.text-right
-          .row
+        .col-xs-3.text-right.col_izquierda
+          .row.row_nombre_usuario
             .col-xs-12
-              Nombre del Usuario
+              %p.nombre_usuario#nombre_usuario_p
+              %p.apellido_usuario#apellido_usuario_p
+          .row.aux_relative
+            .col-xs-12
           .row
             .col-xs-12
               = image_tag 'pantalla_2/adorno_izquierdo.png', class: 'img-responsive adorno_izquierdo'
-          .row
+          .row.row_texto
             .col-xs-12
               = image_tag 'pantalla_2/texto.png', class: 'img-responsive'
-        .col-xs-6.text-center
+        .col-xs-6.text-center.col_medio
           .row
             .col-xs-12
               .portrait#canvas_video_div
@@ -22,8 +25,8 @@
                 .pic_frame
                   .ci-main-canvas
                     #canvas_container.ci-canvas-wrapper
-                      %video#video{:autoplay => "", :height => "358", :width => "355"}
-                      %canvas#canvas.ui-widget-content{:height => "358", :style => "", :width => "355"}
+                      %video#video{:autoplay => "", :height => "360", :width => "360"}
+                      %canvas#canvas.ui-widget-content{:height => "360", :style => "", :width => "360"}
                     #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
                   #img_container
                   #message
@@ -31,18 +34,34 @@
               .portrait
                 #html2canvas_output
 
-        .col-xs-3.text-center
-          .row
+        .col-xs-3.text-center.col_derecha
+          .row.row_subir_imagen#form_div
             .col-xs-12
               = form_for :upload, url: upload_img_path,  html: { multipart: true }, remote: true do | f |
                 .file_input_div
                   %label.label_file_input{for: 'file-input'}
-                    = image_tag 'pantalla_2/subir_imagen.png', class: 'file-input-img'
+                    = image_tag 'pantalla_2/subir_imagen.png', class: 'file-input-img subir_imagen'
                   = f.file_field :file_input, id: 'file-input', class: 'file_input'
-          .row
+          .row_cambiar_arte#cambiar_arte_div{style: 'display:none'}
+            %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
+              = image_tag 'pantalla_3/cambia_arte.png'
+          .row.aux_relative
             .col-xs-12
-              = image_tag 'pantalla_2/adorno_derecho.png'
-          .row
+          .row.row_adorno_derecho
             .col-xs-12
+              = image_tag 'pantalla_2/adorno_derecho.png', class: 'adorno_derecho'
+          .row_compartir#row_compartir{style: 'display:none'}
+            %button#boton_compartir
+              = image_tag 'pantalla_3/boton_compartir.png'
+          .row.row_encender_camara
+            .col-xs-12
+              %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button", style: 'display:none'}
+                = image_tag 'pantalla_3/cambia_marco.png'
               %button#camara_on
                 = image_tag 'pantalla_2/encender_camara.png', class: 'img-responsive'
+              %button#snap{style: 'display:none'} Tomar Foto
+              %button#retake.sexyButton{:style => "display:none;"} Retomar
+
+= render partial: 'partial_modal_pinturas'
+
+= render partial: 'partial_modal_cuadros'

@@ -13,5 +13,6 @@
  *= require_tree .
  *= require font-awesome
  *= require animate
+ *= require_directory ./AbrahamLincoln
  *= require_self
  */

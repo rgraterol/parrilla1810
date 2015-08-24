@@ -5,3 +5,57 @@
 .label_file_input {
     cursor: copy;
 }
+
+.aux_relative {
+ height: 113px;
+}
+.row_nombre_usuario {
+    position: absolute;
+    left: 36%;
+    top: 67%;
+    text-align: right;
+}
+
+.nombre_usuario {
+    font-family: 'AbrahamLincoln';
+    font-size: 30px;
+    color: #902a1f;
+    margin-bottom: 0;
+}
+.apellido_usuario {
+    font-family: 'AbrahamLincoln';
+    font-size: 30px;
+    color: #902a1f;
+
+}
+
+.adorno_izquierdo {
+    position: absolute;
+    left: 45%;
+}
+
+.row_texto {
+    position: absolute;
+    top: 200%;
+    left: 50%;
+}
+
+.col_derecha {
+    margin-top: 0%;
+}
+
+.row_subir_imagen {
+    position: absolute;
+    top:7%;
+}
+
+.adorno_derecho {
+    position: absolute;
+    left: -28%;
+}
+
+.row_encender_camara {
+    position: absolute;
+    top: 200%;
+    left: 10%;
+}

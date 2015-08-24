@@ -4,9 +4,9 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-	min-width: 355px;
-    height: 358px;
+	min-width: 360px;
+    height: 360px;
 }
 .ci-main-canvas .ci-canvas-wrapper:hover {cursor:move;}
 
-.ci-main-canvas .ci-canvas-wrapper canvas {position:absolute;z-index:1;top:47px;left:0px;min-width:355px !important;}
+.ci-main-canvas .ci-canvas-wrapper canvas {position:absolute;z-index:1;top:45px;left:0px;min-width:360px !important;}

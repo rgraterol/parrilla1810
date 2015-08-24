@@ -991,6 +991,7 @@
        * @param string type 'in' lub 'out'
        * @return void
        */
+
       this.zoom = function(type) {
         // Zmieniamy wielkość procent w zależności od tego, czy przybliżamy czy oddalamy
         if(type == 'in')

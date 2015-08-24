@@ -43,12 +43,12 @@
 }
 
 .portrait {
-    position: relative;
+    position: absolute;
     height: 358px;
-    width: 355px;
+    width: 360px;
     overflow-y: hidden;
     overflow-x: hidden;
-    left:18%;
+    left:20%;
 }
 
 
@@ -56,16 +56,16 @@
     background: url(pinturas/01-loco.png)  no-repeat scroll 0 0 transparent;
     pointer-events: none;
     position: absolute;
-    width: 355px;
-    height: 358px;
+    width: 360px;
+    height: 360px;
     z-index: 50;
 }
 
 .pic_frame {
     position: absolute;
-    width: 355px;
+    width: 360px;
     z-index: 1;
-    height: 358px;
+    height: 360px;
 }
 
 .modal-header {
