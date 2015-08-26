@@ -1,0 +1,38 @@
+:javascript
+  jQuery(document).ready(function($) {
+    $('body').addClass('fadeOut animated');
+    $('body').removeClass();
+    $('body').addClass('body_pantalla_2');
+    return $('body').addClass('fadeIn animated');
+  });
+
+.vcenter_full#main_div
+  .row
+    .col-xs-12.col-lg-12.col-md-12
+      .container
+        .row
+          .col-xs-3
+            .row.aux_relative
+            .row.row_felicidades
+              .col-xs-12
+                = image_tag 'felicidades/felicidades.png', class: 'img-responsive img_felicidades'
+                = image_tag 'felicidades/adorno_izquierdo_2.png', class: 'img-responsive img_adorno_izquierdo'
+          .col-xs-6
+            .row.row_galeria
+              .col-xs-12
+                .portrait
+                  = link_to main_galeria_path do
+                    = image_tag 'felicidades/visita_galeria.png', class: 'imagen_galeria'
+                    = image_tag "/#{@id}/#{@img}.png", class: 'imagen_user'
+          .col-xs-3
+            .row.row_texto_participando
+              .col-xs-12
+                .row.aux_relative
+                = image_tag 'felicidades/adorno_derecho_2.png', class: 'img-responsive img_adorno_derecho'
+                = image_tag 'felicidades/texto_participando.png', class: 'img-responsive img_texto_participando'
+.row.row_costillas_full
+  .col-xs-12
+    = image_tag 'felicidades/costillas.png', class: 'img-responsive imagen_costillas', id: 'imagen_costillas'
+
+
+

@@ -18,4 +18,6 @@
 //= require canvas2image
 //= require cropimg/jquery.mousewheel
 //= require cropimg/cropimg.jquery
+//= require bootstrapValidator/bootstrapValidator
+//= require sly.min
 //= require_tree

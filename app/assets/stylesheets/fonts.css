@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'AbrahamLincoln';
+    src: url('/assets/AbrahamLincoln/AbrahamLincoln.eot');
+    src: url('/assets/AbrahamLincoln/AbrahamLincoln.eot?iefix') format('eot'),
+    url('/assets/AbrahamLincoln/AbrahamLincoln.woff') format('woff'),
+    url('/assets/AbrahamLincoln/AbrahamLincoln.ttf') format('truetype'),
+    url('/assets/AbrahamLincoln/AbrahamLincoln.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BlissPro';
+    src: url('/assets/BlissPro/BlissPro.eot');
+    src: url('/assets/BlissPro/BlissPro.eot?iefix') format('eot'),
+    url('/assets/BlissPro/BlissPro.woff') format('woff'),
+    url('/assets/BlissPro/BlissPro.ttf') format('truetype'),
+    url('/assets/BlissPro/BlissPro.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BlissPro-Bold';
+    src: url('/assets/BlissPro-Bold/BlissPro-Bold.eot');
+    src: url('/assets/BlissPro-Bold/BlissPro-Bold.eot?iefix') format('eot'),
+    url('/assets/BlissPro-Bold/BlissPro-Bold.woff') format('woff'),
+    url('/assets/BlissPro-Bold/BlissPro-Bold.ttf') format('truetype'),
+    url('/assets/BlissPro-Bold/BlissPro-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

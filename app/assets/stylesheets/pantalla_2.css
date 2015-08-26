@@ -7,24 +7,24 @@
 }
 
 .aux_relative {
- height: 113px;
+ height: 115px;
 }
 .row_nombre_usuario {
     position: absolute;
-    left: 36%;
-    top: 67%;
+    left: 50%;
+    top: 65%;
     text-align: right;
 }
 
 .nombre_usuario {
     font-family: 'AbrahamLincoln';
-    font-size: 30px;
+    font-size: 40px;
     color: #902a1f;
     margin-bottom: 0;
 }
 .apellido_usuario {
     font-family: 'AbrahamLincoln';
-    font-size: 30px;
+    font-size: 40px;
     color: #902a1f;
 
 }
@@ -36,7 +36,7 @@
 
 .row_texto {
     position: absolute;
-    top: 200%;
+    top: 185%;
     left: 50%;
 }
 
@@ -51,11 +51,16 @@
 
 .adorno_derecho {
     position: absolute;
-    left: -28%;
+    left: -26%;
 }
 
 .row_encender_camara {
     position: absolute;
-    top: 200%;
+    top: 185%;
     left: 10%;
+}
+
+.aviso {
+    margin-top: 42px;
+    margin-left: 13px;
 }

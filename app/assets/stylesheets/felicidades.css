@@ -1,0 +1,52 @@
+.imagen_galeria {
+    margin-left: -6%;
+    margin-top: -8%;
+    position: absolute;
+    z-index: 1;
+    width: 285px;
+    top: 60px;
+    left: 60px;
+    height: 295px;
+}
+
+.imagen_user {
+    position: absolute;
+}
+
+.vcenter_full {
+    min-height: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.row_costillas_full {
+    position: fixed;
+    bottom: 5%;
+    left: 30%;
+}
+
+
+.img_felicidades {
+    position: absolute;
+    left: 30%;
+    margin-top: 7%
+}
+
+.img_adorno_izquierdo {
+    position: absolute;
+    left: 90%;
+}
+
+.img_adorno_derecho {
+    position: absolute;
+    left: -25%;
+}
+
+.img_texto_participando {
+    position: absolute;
+    left: 20%;
+    top: 75%;
+}

@@ -1,0 +1,107 @@
+
+.pagespan {
+    width: 1100px;
+}
+
+.frame {
+    width: 1100px;
+}
+.luces_galeria {
+    position: absolute;
+    background: url('galeria/luces_galeria.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    z-index: -1;
+    width: 100%;
+}
+
+.wrap {
+    position: relative;
+    margin: 3em 0;
+}
+.frame {
+    height: 275px;
+    line-height: 250px;
+    overflow: hidden;
+}
+.frame ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 50px;
+}
+.frame ul li {
+    float: left;
+    width: 365px;
+    height: 100%;
+    margin: 0 1px 0 0;
+    padding: 0;
+    color: #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.frame ul li.active {
+    color: #fff;
+}
+
+/* Scrollbar */
+.scrollbar {
+    margin: 0 0 1em 0;
+    height: 2px;
+    background: #ccc;
+    line-height: 0;
+}
+.scrollbar .handle {
+    width: 100px;
+    height: 100%;
+    background: #292a33;
+    cursor: pointer;
+}
+.scrollbar .handle .mousearea {
+    position: absolute;
+    top: -9px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+.logo_galeria {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adorno_galeria {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vcenter_galeria {
+    min-height: 100%;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boton_anterior_div {
+    position: absolute;
+    left: -10%;
+    top: 35%;
+}
+.boton_siguiente_div {
+    position: absolute;
+    top: 35%;
+    left: 98%;
+}
+
+.galeria_pic {
+    width: 250px;
+}

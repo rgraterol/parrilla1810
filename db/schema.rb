@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824195625) do
+ActiveRecord::Schema.define(version: 20150825174911) do
+
+  create_table "participantes", force: :cascade do |t|
+    t.string   "nombre",           limit: 255
+    t.date     "fecha_nacimiento"
+    t.integer  "provincia_id",     limit: 4
+    t.string   "email",            limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "provincias", force: :cascade do |t|
+    t.integer  "provincia_id",     limit: 4
+    t.string   "provincia_nombre", limit: 255
+    t.string   "region_id",        limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regiones", force: :cascade do |t|
+    t.integer  "region_id",      limit: 4
+    t.string   "region_nombre",  limit: 255
+    t.string   "region_ordinal", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "uploads", force: :cascade do |t|
     t.string   "img",        limit: 255

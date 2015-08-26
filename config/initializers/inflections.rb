@@ -14,3 +14,12 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+
+  inflect.irregular 'region', 'regiones'
+  inflect.plural  'regiones', 'region'
+
+  inflect.irregular 'provincia', 'provincias'
+  inflect.plural 'provincias', 'provincia'
+end

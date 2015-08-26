@@ -1,0 +1,33 @@
+.galeria
+  .row
+    .col-xs-12
+      .luces_galeria
+
+  .vcenter_galeria
+    .container
+      .row
+        .col-xs-12
+          .pagespan
+            = image_tag 'galeria/logo_galeria.png', class: 'img-responsive logo_galeria'
+      .row
+        .col-xs-12
+          .wrap
+            .pagespan
+              .scrollbar
+                .handle
+              .boton_anterior_div
+                %button.boton_anterior.backward
+                  = image_tag 'galeria/ver_anterior.png'
+              .frame#frame
+                %ul.slidee
+                  = @img.each do |img|
+                    %li
+                      = image_tag "/#{img[:id]}/#{img[:img]}.png", class: 'galeria_pic'
+              .boton_siguiente_div
+                %button.boton_siguiente.forward
+                  = image_tag 'galeria/ver_siguiente.png'
+      .row
+        .col-xs-12
+          .pagespan
+            = image_tag 'galeria/adorno_galeria.png', class: 'img-responsive adorno_galeria'
+

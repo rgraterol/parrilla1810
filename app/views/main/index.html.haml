@@ -1,17 +1,19 @@
-.row.luces_row#luces_row
+.fb-root#fb-root
+  .row.luces_row#luces_row
+    .col-xs-12
+      .luces#luces
+
+  .vcenter#main_div
+    = render partial: 'pantalla_1'
+    //= render partial: 'main'
+  .vcenter#loading_div{style: 'display:none;'}
+    .row
+      .col-xs-12.text-center
+        %i.fa.fa-circle-o-notch.fa-5x.fa-spin
+
+.row
   .col-xs-12
-    .luces#luces
-
-.vcenter#main_div
-  = render partial: 'pantalla_1'
-  //= render partial: 'main'
-.vcenter#loading_div{style: 'display:none;'}
-  .row
-    .col-xs-12.text-center
-      %i.fa.fa-circle-o-notch.fa-5x.fa-spin
-
-
-
+    = image_tag 'felicidades/costillas.png', class: 'img-responsive imagen_costillas', id: 'imagen_costillas', style: 'display:none'
 
 
 
