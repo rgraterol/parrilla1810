@@ -14,6 +14,11 @@
             .col-xs-12.text-center
               %button.boton_facebook#boton_facebook
                 = image_tag 'pantalla_1/facebook_connect.png'
+              %button.boton_facebook#boton_facebook_off{style: 'display:none', disabled: 'disabled'}
+                = image_tag 'pantalla_1/facebook_connect_off.png'
+          .row#boton_facebook_loading{style: 'display:none'}
+            .col-xs-12.text-center
+              %i.fa.fa-circle-o-notch.fa-2x.fa-spin
           .row#adorno_btn_fb_row
             .col-xs-12.text-center
               = image_tag 'pantalla_1/adorno_btn_fb.png'

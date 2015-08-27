@@ -2,6 +2,9 @@ user = ''
 jQuery(document).ready ($) ->
 
   $('#boton_facebook').click ->
+    $('#boton_facebook').hide()
+    $('#boton_facebook_off').show()
+    $('#boton_facebook_loading').show()
     FB.getLoginStatus (response) ->
       if response.status == 'connected'
         facebook_functions()
