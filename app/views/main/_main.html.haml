@@ -29,7 +29,7 @@
                       #canvas_container.ci-canvas-wrapper
                         = image_tag 'pantalla_2/aviso formato.png', class: 'img-responsive aviso', id: 'aviso_formato', style: 'display:none;'
                         = image_tag 'pantalla_2/aviso tamano.png', class: 'img-responsive aviso', id: 'aviso_tamano', style: 'display:none'
-                        %video#video{:autoplay => "", :height => "360", :width => "360"}
+                        %video.video#video{:autoplay => "", :height => "360", :width => "360"}
                         %canvas#canvas.ui-widget-content{:height => "360", :style => "", :width => "360"}
                       #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
                     #img_container
