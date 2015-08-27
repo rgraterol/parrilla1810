@@ -318,7 +318,7 @@ pantalla_3_hide = ->
 facebook_share = (url_imagen) ->
   FB.ui {
     method: 'feed'
-    link: url_imagen
+    link: 'http://nosunelaparrilla.cl'
     caption: 'La historia de Chile ya conoce mi nombre como prócer de la parrilla.'
     picture: url_imagen
     description: 'Y tú ¡qué esperas para quedar en la memoria! ingresa aquí, haz tu autoretrato y participa por un pack de productos Super Cerdo.'

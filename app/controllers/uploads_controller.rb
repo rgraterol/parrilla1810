@@ -18,7 +18,7 @@ class UploadsController < ApplicationController
 			if f.write image_data
 				current_photos = user.photo_count + 1
 				user.update_column(:photo_count, current_photos)
-				render json: "http://sshelium.chickenkiller.com:3000/#{user.id}/#{file_name}.png".to_json
+				render json: "http://nosunelaparrilla.cl/#{user.id}/#{file_name}.png".to_json
 				return
 			else
 				render json: 'false'.to_json
