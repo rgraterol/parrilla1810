@@ -319,6 +319,9 @@ pantalla_3_hide = ->
 
 ########## COMPARTIR EN FACEBOOK ##########
 facebook_share = (url_imagen) ->
+  $('#loading_facebook_share').show()
+  $('#boton_compartir').hide()
+  $('#boton_compartir_off').show()
   FB.ui {
     method: 'feed'
     link: 'http://nosunelaparrilla.cl'
@@ -346,6 +349,9 @@ facebook_share = (url_imagen) ->
       $('.portrait').hide()
       $('#formulario_div').show()
       $('#formulario_div').addClass('fadeIn')
+      $('#loading_facebook_share').hide()
+      $('#boton_compartir').show()
+      $('#boton_compartir_off').hide()
 
     return
 
@@ -353,6 +359,7 @@ facebook_share = (url_imagen) ->
 upload_pic = ->
 
   $('#boton_compartir').click ->
+    $('#loading_facebook_share').show()
     $('#html2canvas_output').empty()
     $('#retake').hide()
     $('#snap').hide()

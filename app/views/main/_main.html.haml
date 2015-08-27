@@ -97,6 +97,7 @@
                 = image_tag 'pantalla_3/compartir-on.png'
               %button#boton_compartir_off{disabled: 'disabled',"data-toggle" => "tooltip", "title" => "Debes seleccionar un arte para poder compartir"}
                 = image_tag 'pantalla_3/compartir-off.png'
+              %i.fa.fa-circle-o-notch.fa-2x.fa-spin#loading_facebook_share{style: 'display:none'}
             .row.row_encender_camara
               .col-xs-12
                 %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button", style: 'display:none'}

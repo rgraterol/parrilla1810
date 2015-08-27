@@ -8,9 +8,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: nosunela_parrilla_production
-  username: nosunela_mysql
-  password: nosunelaparrilla2015.
+  database: parrilla1810
+  username: root
+  password: 123456
   shost: localhost
 
 
