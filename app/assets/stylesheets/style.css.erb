@@ -2,7 +2,7 @@ body {
     overflow-y: hidden;
 }
 .body_pantalla_1{
-    background: url('pantalla_1/bg_1.png') no-repeat center center fixed;
+    background: url(<%= asset_path 'pantalla_1/bg_1.png' %>) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,7 +12,7 @@ body {
 }
 
 .body_pantalla_2{
-    background: url('pantalla_2/bg_2.png') no-repeat center center fixed;
+    background: url(<%= asset_path 'pantalla_2/bg_2.png' %>) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,7 +23,7 @@ body {
 
 .vcenter {
     min-height: 100%;
-    min-height: 75vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,8 +31,8 @@ body {
 }
 
 .luces {
-    position: absolute;
-    background: url('pantalla_1/luces.png') no-repeat center center fixed;
+    position: fixed;
+    background: url(<%= asset_path 'pantalla_1/luces.png' %>) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -57,7 +57,7 @@ body {
 
 
 .arte {
-    background: url(pinturas/01-loco.png)  no-repeat scroll 0 0 transparent;
+    background: url( <%= asset_path 'pinturas/01-loco.png' %>)  no-repeat scroll 0 0 transparent;
     pointer-events: none;
     position: absolute;
     width: 360px;

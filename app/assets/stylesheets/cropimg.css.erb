@@ -1,11 +1,11 @@
 .ci-main {position:relative;max-width:100%;margin:0 auto;}
-.ci-main .ci-image-wrapper {margin:0px 30px 15px 0px;position:relative;overflow:hidden;border:1px solid #000;box-shadow:0px 0px 10px rgba(0,0,0,.8);background-image:url('pantalla_2/canvas_background.png');background-repeat:no-repeat;
+.ci-main .ci-image-wrapper {margin:0px 30px 15px 0px;position:relative;overflow:hidden;border:1px solid #000;box-shadow:0px 0px 10px rgba(0,0,0,.8);background-image:url(<%= asset_path 'pantalla_2/canvas_background.png' %>);background-repeat:no-repeat;
 	min-width: 285px;
     height: 295px;
 }
 .ci-main .ci-image-wrapper:hover {cursor:move;}
 .ci-main .ci-image-wrapper img {position:absolute;z-index:1;top:0px;left:0px;display:block !important;max-width:none !important;}
-.ci-main .ci-image-wrapper .ci-fixing-position {display:none;width:17px;height:17px;background-color:#000;position:absolute;z-index:2;background-image:url('buttons.png');background-repeat:no-repeat;}
+.ci-main .ci-image-wrapper .ci-fixing-position {display:none;width:17px;height:17px;background-color:#000;position:absolute;z-index:2;background-image:url(<%= asset_path 'buttons.png' %>);background-repeat:no-repeat;}
 .ci-main .ci-image-wrapper .ci-fixing-position:hover {cursor:pointer;}
 .ci-main .ci-image-wrapper .ci-fixing-position.ci-fptl {bottom:39px;right:39px;background-position:0px -21px;}
 .ci-main .ci-image-wrapper .ci-fixing-position.ci-fptc {bottom:39px;right:22px;background-position:-17px -21px;}
@@ -22,11 +22,11 @@
     top: 39%;
     left: 60%;
 }
-.ci-main .ci-tool .ci-button {display:block;width:21px;height:21px;margin:0px 0px 5px 5px;background-image:url('buttons.png');background-repeat:no-repeat;}
+.ci-main .ci-tool .ci-button {display:block;width:21px;height:21px;margin:0px 0px 5px 5px;background-image:url(<%= asset_path 'buttons.png' %>);background-repeat:no-repeat;}
 .ci-main .ci-tool .ci-button:hover {cursor:pointer;}
 .ci-main .ci-tool .ci-button.ci-tool-zoomin {background-position:0px 0px;}
 .ci-main .ci-tool .ci-button.ci-tool-zoomout {background-position:-21px 0px;}
-.ci-main .ci-tool .ci-fixing-size {display:block;width:21px;height:21px;margin:0px 0px 5px 5px;background-image:url('buttons.png');background-repeat:no-repeat;}
+.ci-main .ci-tool .ci-fixing-size {display:block;width:21px;height:21px;margin:0px 0px 5px 5px;background-image:url(<%= asset_path 'buttons.png' %>);background-repeat:no-repeat;}
 .ci-main .ci-tool .ci-fixing-size:hover {cursor:pointer;}
 .ci-main .ci-tool .ci-fixing-size.ci-fsw {background-position:-42px 0px; display:none;}
 .ci-main .ci-tool .ci-fixing-size.ci-fsh {background-position:-63px 0px; display: none;}
