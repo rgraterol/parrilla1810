@@ -383,7 +383,9 @@ upload_pic = ->
           if data == 'max_pics_reached'
             console.log 'max_pics_reached'
           else if data == 'false'
-            console.log 'error on upload'
+            $('#canvas_video_div').show()
+            $('#html2canvas_col').show()
+            $('#loading_facebook_share').hide()
           else
             img_url =  data
             facebook_share(img_url)
