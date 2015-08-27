@@ -39,9 +39,9 @@ class MainController < ApplicationController
 		if last.id == 1
 			ids = [1]
 		elsif last.id < 50
-			ids = (1..last.id).to_a.sort{ rand() - 0.5 }[1..last.id]
+			ids = (1..last.id).to_a.sort{ rand() - 0.5 }[0..last.id]
 		else
-			ids = (1..last.id).to_a.sort{ rand() - 0.5 }[1..50]
+			ids = (1..last.id).to_a.sort{ rand() - 0.5 }[0..50]
 		end
 		@img = Array.new
 		ids.each do |id|
