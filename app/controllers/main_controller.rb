@@ -55,6 +55,10 @@ class MainController < ApplicationController
 		end
 	end
 
+	def old
+
+	end
+
 	private
 
 		def participante_params

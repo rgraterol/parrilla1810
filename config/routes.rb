@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
- root 'main#index'
+ root 'main#old'
+
+ get '1810', to: 'main#index', as: :main_index
 
  post 'upload_img', to: 'uploads#img', as: :upload_img
 
