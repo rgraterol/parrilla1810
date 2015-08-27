@@ -23,10 +23,10 @@ class MainController < ApplicationController
 	def felicidades
 		participante = Participante.find_by(id:  ActionController::Parameters.new(sc: params[:sc]).permit(:sc)[:sc])
 		user = User.find_by_email(participante.email) if participante.present?
-		if user.present?
+		if user.present? && user.email.present? && user.photo_count.present?
 			cipher = Cipher.new ["K", "D", "w", "X", "H", "3", "e", "1", "S", "B", "g", "a", "y", "v", "I", "6", "u", "W", "C", "0", "9", "b", "z", "T", "A", "q", "U", "4", "O", "o", "E", "N", "r", "n", "m", "d", "k", "x", "P", "t", "R", "s", "J", "L", "f", "h", "Z", "j", "Y", "5", "7", "l", "p", "c", "2", "8", "M", "V", "G", "i", "Q", "F"]
 			@img = cipher.encrypt(user.email + '_' + (user.photo_count - 1 ).to_s)
-			@id = participante.id
+			@id = user.id
 		else
 			redirect_to root_url and return
 		end

@@ -50,3 +50,27 @@
     left: 20%;
     top: 75%;
 }
+
+.row_costillas_felicidades {
+
+    position: fixed;
+    bottom: 5%;
+    left: 32%;
+
+}
+
+@media only screen and  (max-width: 1280px)  {
+    .row_costillas_felicidades {
+        position: fixed;
+        bottom: 3%;
+        left: 22%;
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+    .row_costillas_felicidades {
+        position: fixed;
+        bottom: 3%;
+        left: 19%;
+    }
+}
