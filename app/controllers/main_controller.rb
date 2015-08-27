@@ -45,13 +45,13 @@ class MainController < ApplicationController
 		end
 		@img = Array.new
 		ids.each do |id|
-			hash = Hash.new
 			user = User.find_by(id: id)
-			puts id
-			puts user
-			hash[:img] = cipher.encrypt(user.email + '_' + (user.photo_count - 1 ).to_s) if user.present?
-			hash[:id] = id if user.present?
-			@img << hash if user.present?
+			if user.present? && user.email.present? && user.photo_count > 0
+				hash = Hash.new
+				hash[:img] = cipher.encrypt(user.email + '_' + (user.photo_count - 1 ).to_s) if user.present?
+				hash[:id] = id if user.present?
+				@img << hash if user.present?
+			end
 		end
 	end
 

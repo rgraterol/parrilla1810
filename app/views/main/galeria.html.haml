@@ -22,7 +22,7 @@
                 %ul.slidee
                   = @img.each do |img|
                     %li
-                      = image_tag "/#{img[:id]}/#{img[:img]}.png", class: 'galeria_pic'
+                      = image_tag "/#{img[:id]}/#{img[:img]}.png", class: 'galeria_pic' rescue ''
               .boton_siguiente_div
                 %button.boton_siguiente.forward
                   = image_tag 'galeria/ver_siguiente.png'
