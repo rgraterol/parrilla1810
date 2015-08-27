@@ -330,12 +330,18 @@ facebook_share = (url_imagen) ->
     description: 'Y tú ¡qué esperas para quedar en la memoria! ingresa aquí, haz tu autoretrato y participa por un pack de productos Super Cerdo.'
   }, (response) ->
     if response and !response.error_code
+      console.log(response)
+      $('#row_compartir').hide()
+      $('.portrait').addClass('fadeOut')
+      $('.portrait').hide()
       $('#canvas_video_div').addClass('fadeOut')
       $('#canvas_video_div').hide()
       $('#formulario_div').show()
       $('#formulario_div').addClass('fadeIn')
 
+
     else if response and response.error_code == 4201
+      console.log( response )
       #$('#canvas_video_div').show()
       #$('#html2canvas_output').empty()
       #$('#html2canvas_col').hide()

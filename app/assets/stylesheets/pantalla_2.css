@@ -9,11 +9,12 @@
 .aux_relative {
  height: 115px;
 }
+
 .row_nombre_usuario {
     position: absolute;
     left: 50%;
     top: 65%;
-    text-align: right;
+    text-align: center;
 }
 
 .nombre_usuario {
