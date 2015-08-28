@@ -20,4 +20,5 @@
 //= require cropimg/cropimg.jquery
 //= require bootstrapValidator/bootstrapValidator
 //= require sly.min
+//= require lightbox
 //= require_tree

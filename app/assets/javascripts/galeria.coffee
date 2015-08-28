@@ -5,23 +5,21 @@ jQuery(document).ready ($) ->
   # Call Sly on frame
   $frame.sly
     horizontal: 1
-    itemNav: 'basic'
+    itemNav: 'forceCentered'
     smart: 1
     activateOn: 'click'
     mouseDragging: 1
     touchDragging: 1
     releaseSwing: 1
-    startAt: 0
+    startAt: 1
     scrollBar: $wrap.find('.scrollbar')
     scrollBy: 1
-    speed: 300
+    speed: 30
     elasticBounds: 1
     easing: 'easeOutExpo'
     dragHandle: 1
     dynamicHandle: 1
     clickBar: 1
-    cycleBy: 'items'
-    cycleInterval: 1000
     pauseOnHover: 1
     forward: $wrap.find('.forward')
     backward: $wrap.find('.backward')

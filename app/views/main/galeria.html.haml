@@ -16,15 +16,28 @@
               .scrollbar
                 .handle
               .boton_anterior_div
-                %button.boton_anterior.backward
+                %button.boton_anterior.prev
                   = image_tag 'galeria/ver_anterior.png'
               .frame#frame
                 %ul.slidee
-                  = @img.each do |img|
-                    %li
-                      = image_tag "/#{img[:id]}/#{img[:img]}.png", class: 'galeria_pic' rescue ''
+                  - index = 0
+                  - i = 0
+                  - while index < @img.length
+                    - if (i % 2) == 0
+                      %li
+                        = link_to "/#{@img[index][:id]}/#{@img[index][:img]}.png", "data-lightbox" => "galeria", "data-title"=>"Nos une la Parrilla" do
+                          = image_tag "/#{@img[index][:id]}/#{@img[index][:img]}.png", class: 'galeria_pic' rescue ''
+                    - else
+                      %li.li_left
+                        = link_to "/#{@img[index][:id]}/#{@img[index][:img]}.png", "data-lightbox" => "galeria", "data-title"=>"Nos une la Parrilla" do
+                          = image_tag "/#{@img[index][:id]}/#{@img[index][:img]}.png", class: 'galeria_pic_half_top'
+                        = link_to "/#{@img[index + 1][:id]}/#{@img[index + 1][:img]}.png", "data-lightbox" => "galeria", "data-title"=>"Nos une la Parrilla" do
+                          = image_tag "/#{@img[index + 1][:id]}/#{@img[index + 1][:img]}.png", class: 'galeria_pic_half_bottom'
+                        - index+=1
+                    - index += 1
+                    - i+= 1
               .boton_siguiente_div
-                %button.boton_siguiente.forward
+                %button.boton_siguiente.next
                   = image_tag 'galeria/ver_siguiente.png'
       .row
         .col-xs-12

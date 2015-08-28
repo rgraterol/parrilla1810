@@ -99,21 +99,11 @@ load_video_canvas = ->
     $('#upload_photo_button').hide()
     $('#canvas_video_div').show()
     $('#html2canvas_col').hide()
+
     return
 
   document.getElementById('snap').addEventListener 'click', ->
-    hide_avisos()
-    context.drawImage video, 0, 0, 360, 270
-    document.getElementById('video').style.display = 'none'
-    document.getElementById('retake').style.display = 'initial'
-    document.getElementById('snap').style.display = 'none'
-    $('#img_container').empty()
-    $('#canvas').show()
-    $('#upload_photo_button').show()
-    $('#canvas_video_col').show()
-    $('#html2canvas_col').hide()
-    pantalla_3()
-    return
+    snap_taked(context)
   document.getElementById('retake').addEventListener 'click', ->
     hide_avisos()
     document.getElementById('video').style.display = 'initial'
@@ -125,9 +115,51 @@ load_video_canvas = ->
     $('#upload_photo_button').hide()
     $('#canvas_video_col').show()
     $('#html2canvas_col').hide()
+    $('.ci-main-canvas').show()
     pantalla_3_hide()
     return
   return
+
+snap_taked = (context) ->
+  hide_avisos()
+  context.drawImage video, 0, 0, 360, 270
+  the_canvas = document.getElementById("canvas");
+  dataURL = the_canvas.toDataURL('image/png')
+  pastedImage = new Image();
+  # Convert and download as image
+  pastedImage = Canvas2Image.convertToPNG the_canvas
+  pastedImage.id = "snap_image"
+  pastedImage.className = 'canvas'
+  $('#img_container').empty()
+  $('#img_container').html(pastedImage)
+  canvas_cropmg()
+  $('.ci-main-canvas').hide()
+  $('#canvas_video_div').show()
+  $('#html2canvas_col').hide()
+  $('#canvas').hide()
+  $('#upload_photo_button').show()
+  document.getElementById('video').style.display = 'none'
+  document.getElementById('retake').style.display = 'initial'
+  document.getElementById('snap').style.display = 'none'
+  pantalla_3()
+  return
+
+canvas_cropmg = ->
+  $('#snap_image').cropimg
+    maxContainerWidth: 600
+    resultWidth: 600
+    resultHeight: 600
+    showBtnTips: false
+    zoomDelay: 100
+    mouseWheelZoomTimes: 10
+    zoomStep: 3
+    textBtnTipZoomIn: 'Acercar'
+    textBtnTipZoomOut: 'Alejar'
+    textBtnTipRTW: 'Ajustar al ancho del contenedor'
+    textBtnTipRTH: 'Ajustar a la altura del contenedor'
+    onChange: ->
+  return
+
 
 ###############  DRAGGABLE ###############
 
@@ -176,6 +208,7 @@ crop_pic = ->
 hide_avisos = ->
   $('#aviso_formato').hide()
   $('#aviso_tamano').hide()
+
 
 
 readURL = (input) ->
