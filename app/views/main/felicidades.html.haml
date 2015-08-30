@@ -6,7 +6,7 @@
     return $('body').addClass('fadeIn animated');
   });
 
-.vcenter_full#main_div
+.vcenter#main_div
   .row
     .col-xs-12.col-lg-12.col-md-12
       .container
@@ -15,7 +15,7 @@
             .row.aux_relative
             .row.row_felicidades
               .col-xs-12
-                = image_tag 'felicidades/felicidades.png', class: 'img-responsive img_felicidades'
+                = image_tag 'felicidades/texto_izquierda.png', class: 'img-responsive texto_izquierda'
                 = image_tag 'felicidades/adorno_izquierdo_2.png', class: 'img-responsive img_adorno_izquierdo'
           .col-xs-6
             .row.row_galeria
@@ -29,10 +29,21 @@
               .col-xs-12
                 .row.aux_relative
                 = image_tag 'felicidades/adorno_derecho_2.png', class: 'img-responsive img_adorno_derecho'
-                = image_tag 'felicidades/texto_participando.png', class: 'img-responsive img_texto_participando'
-.row.row_costillas_felicidades
+                = image_tag 'felicidades/texto_derecha.png', class: 'img-responsive texto_derecha'
+
+.row
   .col-xs-12
-    = image_tag 'felicidades/costillas.png', class: 'img-responsive imagen_costillas', id: 'imagen_costillas'
+    = image_tag 'felicidades/felicidades.png', class: 'navigation', id: 'navigation_1'
+.row.row_bottom#row_bottom
+  .col-xs-3.text-center
+    = link_to 'bases' do
+      = image_tag 'pantalla_2/ver_bases.png', class: 'ver_bases'
+  .col-xs-6.text-center
+    %button#productos_parrilleros{"data-target" => ".bs-parrilleros-modal-lg", "data-toggle" => "modal", :type => "button"}
+      = image_tag 'pantalla_2/productos_parrilleros.png', class: 'img-responsive ver_productos_parrilleros'
+  .col-xs-3.text-center
+    = link_to main_galeria_path do
+      = image_tag 'pantalla_2/ver_galeria.png', class: 'ver_bases'
 
 
 

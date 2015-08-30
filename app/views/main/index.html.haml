@@ -1,3 +1,5 @@
+
+
 .fb-root#fb-root
   .row.luces_row#luces_row
     .col-xs-12
@@ -6,14 +8,27 @@
   #main_div
     = render partial: 'pantalla_1'
     //= render partial: 'main'
+
   .vcenter_galeria#loading_div{style: 'display:none;'}
     .row
       .col-xs-12.text-center
         %i.fa.fa-circle-o-notch.fa-5x.fa-spin
 
-.row
-  .col-xs-12
-    = image_tag 'felicidades/costillas.png', class: 'img-responsive imagen_costillas', id: 'imagen_costillas', style: 'display:none'
+.row.row_bottom#row_bottom{style: 'display:none'}
+  .col-xs-3.text-center
+    = link_to 'bases' do
+      = image_tag 'pantalla_2/ver_bases.png', class: 'ver_bases'
+  .col-xs-6.text-center
+    %button#productos_parrilleros{"data-target" => ".bs-parrilleros-modal-lg", "data-toggle" => "modal", :type => "button"}
+      = image_tag 'pantalla_2/productos_parrilleros.png', class: 'img-responsive ver_productos_parrilleros'
+  .col-xs-3.text-center
+    = link_to main_galeria_path do
+      = image_tag 'pantalla_2/ver_galeria.png', class: 'ver_bases'
 
 
+
+
+
+
+= render partial: 'modal_parrilleros'
 

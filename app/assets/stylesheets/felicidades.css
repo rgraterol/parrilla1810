@@ -59,6 +59,18 @@
 
 }
 
+.texto_izquierda {
+    position: absolute;
+    left: 45%;
+    margin-top: 10%
+}
+
+.texto_derecha {
+    position: absolute;
+    left: 20%;
+    margin-top: 5%;
+}
+
 @media only screen and  (max-width: 1280px)  {
     .row_costillas_felicidades {
         position: fixed;

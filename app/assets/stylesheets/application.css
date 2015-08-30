@@ -14,5 +14,6 @@
  *= require font-awesome
  *= require animate
  *= require lightbox
+ *= require camera/camera
  *= require_self
  */

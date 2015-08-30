@@ -1,10 +1,12 @@
 user = ''
+frame_flag = true
+pic_flag = true
 jQuery(document).ready ($) ->
 
   $('#boton_facebook').click ->
     $('#boton_facebook').hide()
-    $('#boton_facebook_off').show()
-    $('#boton_facebook_loading').show()
+    $('#boton_facebook_off').fadeIn(1000)
+    $('#boton_facebook_loading').fadeIn(2000)
     FB.getLoginStatus (response) ->
       if response.status == 'connected'
         facebook_functions()
@@ -25,7 +27,7 @@ facebook_functions = ->
   FB.api '/me?fields=id,name,email,age_range,first_name,last_name', (response) ->
     if response and !response.error
       $('#loading_div').show()
-      $('#main_div').hide()
+      $('#pantalla_intro').fadeOut(1500)
       user = response
       $.ajax
         url: '/load_main_frame'
@@ -34,7 +36,7 @@ facebook_functions = ->
         success: (data) ->
           pantalla_2(data)
           $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
-          $('#imagen_costillas').show()
+          $('#row_bottom').show().fadeIn(1000)
         error: (data) ->
           console.log 'ERROR EXECUTING FIRST AJAX'
       return
@@ -104,6 +106,7 @@ load_video_canvas = ->
 
   document.getElementById('snap').addEventListener 'click', ->
     snap_taked(context)
+
   document.getElementById('retake').addEventListener 'click', ->
     hide_avisos()
     document.getElementById('video').style.display = 'initial'
@@ -175,6 +178,7 @@ crop_pic = ->
     $('#video').hide()
     $('#retake').hide()
     $('#snap').hide()
+    $('#camara_on').show()
     hide_avisos()
     file = @files[0]
     imagefile = file.type
@@ -242,83 +246,97 @@ change_pinturas = ->
   $('#pintura01').click ->
     $('#pintura_div').removeClass()
     $('#pintura_div').addClass('pintura01')
-    $('#pintura_div').show()
-    $('#boton_compartir').show()
-    $('#boton_compartir_off').hide()
+    pintura_selected()
+
 
   $('#pintura02').click ->
     $('#pintura_div').removeClass()
     $('#pintura_div').addClass('pintura02')
-    $('#pintura_div').show()
-    $('#boton_compartir').show()
-    $('#boton_compartir_off').hide()
+    pintura_selected()
 
   $('#pintura03').click ->
     $('#pintura_div').removeClass()
     $('#pintura_div').addClass('pintura03')
-    $('#pintura_div').show()
-    $('#boton_compartir').show()
-    $('#boton_compartir_off').hide()
+    pintura_selected()
 
   $('#pintura04').click ->
     $('#pintura_div').removeClass()
     $('#pintura_div').addClass('pintura04')
-    $('#pintura_div').show()
-    $('#boton_compartir').show()
-    $('#boton_compartir_off').hide()
+    pintura_selected()
 
   $('#pintura05').click ->
     $('#pintura_div').removeClass()
     $('#pintura_div').addClass('pintura05')
-    $('#pintura_div').show()
-    $('#boton_compartir').show()
-    $('#boton_compartir_off').hide()
+    pintura_selected()
 
   $('#pintura06').click ->
     $('#pintura_div').removeClass()
     $('#pintura_div').addClass('pintura06')
-    $('#pintura_div').show()
-    $('#boton_compartir').show()
-    $('#boton_compartir_off').hide()
+    pintura_selected()
 
   $('#pintura00').click ->
     $('#pintura_div').hide()
     $('#boton_compartir').hide()
     $('#boton_compartir_off').show()
+    pintura_selected()
 
+pintura_selected = ->
+  if frame_flag
+    $('.bs-cuadros-modal-lg').modal('show');
+    frame_flag = false
+  $('#pintura_div').show()
 ###############  CHANGE FRAMES ###############
 
 change_frames = ->
   $('#frame01').click ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame01')
+    frame_selected()
 
   $('#frame02').click ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame02')
+    frame_selected()
 
   $('#frame03').click ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame03')
+    frame_selected()
 
   $('#frame04').click ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame04')
+    frame_selected()
 
   $('#frame05').click ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame05')
+    frame_selected()
 
   $('#frame06').click ->
     $('#frame_div').removeClass()
     $('#frame_div').addClass('frame06')
+    frame_selected()
+
+frame_selected = ->
+  $('#row_continuar').fadeIn(1500)
+
+boton_continuar = ->
+  $('#boton_continuar').click ->
+    $('#row_continuar').fadeOut(500)
+    $('#cambiar_arte').hide()
+    $('#cambiar_arte_div').hide()
+    $('#navigation_1').hide()
+    $('#navigation_2').fadeIn(1000)
+    $('#camara_on').fadeIn(1000)
+    $('#form_div').fadeIn(1000)
 
 ########### PANTALLA 2 #################3
 
 pantalla_2 = (data) ->
-  $('#main_div').empty()
-  $('#main_div').append data
-  $('#loading_div').hide()
+  $('#main_div').empty().hide()
+  $('#loading_div').fadeOut(500)
+  $('#main_div').append(data).fadeIn(1000)
   $('body').addClass('fadeOut animated')
   $('body').removeClass()
   $('body').addClass('body_pantalla_2')
@@ -336,18 +354,18 @@ pantalla_2 = (data) ->
   change_frames()
   upload_pic()
   validar_form()
+  boton_continuar()
+  $('.bs-pinturas-modal-lg').modal('show');
 
 ########### PANTALLA 3 ################
 
 pantalla_3 = ->
-  $('#form_div').hide()
-  $('#cambiar_arte_div').show()
-  $('#camara_on').hide()
-  $('#cambiar_marco').show()
-  $('#row_compartir').show()
-
+  $('#row_compartir').fadeIn(1000)
+  $('#boton_compartir').show()
+  $('#boton_compartir_off').hide()
 pantalla_3_hide = ->
-  $('#row_compartir').hide()
+  $('#boton_compartir').hide()
+  $('#boton_compartir_off').show()
 
 
 ########## COMPARTIR EN FACEBOOK ##########
@@ -364,13 +382,17 @@ facebook_share = (url_imagen) ->
   }, (response) ->
     if response and !response.error_code
       console.log(response)
-      $('#row_compartir').hide()
+      $('#row_compartir').fadeOut(1000)
+      $('#navigation_2').hide()
+      $('#navigation_3').fadeIn(1500)
       $('.portrait').addClass('fadeOut')
       $('.portrait').hide()
+      $('.row_encender_camara').hide()
       $('#canvas_video_div').addClass('fadeOut')
       $('#canvas_video_div').hide()
-      $('#formulario_div').show()
-      $('#formulario_div').addClass('fadeIn')
+      $('#formulario_div').fadeIn(1500)
+      $('#form_div').fadeOut(1000)
+
 
 
     else if response and response.error_code == 4201
@@ -384,13 +406,16 @@ facebook_share = (url_imagen) ->
       #$('#html2canvas_output').empty()
       #$('#html2canvas_col').hide()
       console.log 'Closed ' + JSON.stringify(response)
+      $('#row_compartir').fadeOut(1000)
+      $('#navigation_2').hide()
+      $('#navigation_3').fadeIn(1500)
       $('.portrait').addClass('fadeOut')
       $('.portrait').hide()
-      $('#formulario_div').show()
-      $('#formulario_div').addClass('fadeIn')
-      $('#loading_facebook_share').hide()
-      $('#boton_compartir').show()
-      $('#boton_compartir_off').hide()
+      $('#canvas_video_div').addClass('fadeOut')
+      $('#canvas_video_div').hide()
+      $('#formulario_div').fadeIn(1500)
+      $('#form_div').fadeOut(1000)
+      $('.row_encender_camara').hide()
 
     return
 

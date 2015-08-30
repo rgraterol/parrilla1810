@@ -1,0 +1,53 @@
+/ MODAL Parrilleros
+.modal.fade.bs-parrilleros-modal-lg.autoModal#modal_parrilleros{"aria-labelledby" => "parrillerosModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        .row{style: 'position: absolute;    top: 50%;    left: 50%;'}
+          .col-xs-12.text-center
+            %i.fa.fa-circle-o-notch.fa-5x.fa-spin
+        .row
+          .col-xs-12
+            #productos_parrilleros
+              .fluid_container
+                #camera_wrap.camera_wrap
+                  %div{"data-src" => "/productos_parrilleros/1.png", "data-thumb" => "/productos_parrilleros/1t.png", "data-alignment" => "center"}
+                  %div{"data-src" => "/productos_parrilleros/2.png", "data-thumb" => "/productos_parrilleros/2t.png"}
+                  %div{"data-src" => "/productos_parrilleros/3.png", "data-thumb" => "/productos_parrilleros/3t.png"}
+                  %div{"data-src" => "/productos_parrilleros/4.png", "data-thumb" => "/productos_parrilleros/4t.png"}
+                  %div{"data-src" => "/productos_parrilleros/5.png", "data-thumb" => "/productos_parrilleros/5t.png"}
+                  %div{"data-src" => "/productos_parrilleros/6.png", "data-thumb" => "/productos_parrilleros/6t.png"}
+                  %div{"data-src" => "/productos_parrilleros/7.png", "data-thumb" => "/productos_parrilleros/7t.png"}
+                  / #camera_wrap_3
+                  / .fluid_container
+:javascript
+  jQuery(document).ready(function($) {
+
+    var flag = true;
+    $('#modal_parrilleros').on('show.bs.modal', function () {
+      if (flag) {
+        jQuery('#camera_wrap').camera({
+          height: '500px',
+          loader: 'bar',
+          pagination: false,
+          thumbnails: true,
+          alignment: 'center',
+          playPause: false,
+          autoAdvance: false,
+          portrait: false
+        });
+         $(this).find('.modal-body').css({
+                width:'auto',
+                height:'635px',
+                'max-height':'100%'
+         });
+         flag = false;
+      }
+
+    });
+  });
+
+

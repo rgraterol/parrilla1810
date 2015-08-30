@@ -58,10 +58,27 @@
 .row_encender_camara {
     position: absolute;
     top: 185%;
-    left: 10%;
+    left: 15%;
 }
 
 .aviso {
     margin-top: 42px;
     margin-left: 13px;
+}
+
+.texto_personajes {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row_continuar {
+    position: absolute;
+    top: 145%;
+    left: 20%;
+}
+.navigation {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

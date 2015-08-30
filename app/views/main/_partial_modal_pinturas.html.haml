@@ -8,6 +8,9 @@
       .modal-body
         .row
           .col-xs-12
+            = image_tag 'pantalla_2/texto_personajes.png', class: 'img-responsive texto_personajes'
+        .row
+          .col-xs-12
             .col-lg-4.col-md-4.col-xs-6.thumb
               %a.thumbnail#pintura01{:href => "#", "aria-label" => "Pintura 01", "data-dismiss" => "modal"}
                 = image_tag 'pinturas/01-loco.png', alt: 'Pintura 01', class: 'img-responsive'
@@ -26,10 +29,3 @@
             .col-lg-4.col-md-4.col-xs-6.thumb
               %a.thumbnail#pintura06{:href => "#", "aria-label" => "Pintura 06", "data-dismiss" => "modal"}
                 = image_tag 'pinturas/06-mina.png', alt: 'Pintura 06', class: 'img-responsive'
-            .col-lg-4.col-md-4.col-xs-12
-            .col-lg-4.col-md-4.col-xs-6-thumb{style: 'font-size: 40px; font-family: "AbrahamLincoln"; color:white; '}
-              %a.thumbnail.text-center#pintura00{:href => "#", "aria-label" => "Pintura 00", "data-dismiss" => "modal"}
-                %span{"aria-hidden" => "true", style: 'color: white'} ×
-                %br
-                %span{style: 'color: white'}
-                  Quitar

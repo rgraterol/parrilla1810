@@ -13,7 +13,7 @@
               .col-xs-12
             .row
               .col-xs-12
-                = image_tag 'pantalla_2/adorno_izquierdo.png', class: 'img-responsive adorno_izquierdo'
+                = image_tag 'pantalla_2/adorno_izquierdo.png', class: 'adorno_izquierdo'
             .row.row_texto
               .col-xs-12
                 = image_tag 'pantalla_2/texto.png', class: 'img-responsive'
@@ -69,46 +69,63 @@
                           .col-xs-8
                             = f.text_field :email, readonly: true,  class: 'form-control'
                         .form-group
-                          .col-xs-6.col-xs-offset-4
-                            %button#boton_enviar{type: "submit" }
+                          .col-xs-8.col-xs-offset-2.text-center{style: 'font-size:10px; margin-top: -10px; margin-bottom: -20px;'}
+                            %p
+                              Al presionar enviar estas aceptando nuestros
+                              = link_to 'bases' do
+                                términos y condiciones
+                              de uso.
+                        .form-group
+                          .col-xs-12
+                            %button#boton_enviar{type: "submit" , style: 'display:block; margin-left: auto; margin-right: auto;'}
                               = image_tag 'pantalla_4/enviar-on.png'
               .col-xs-12#html2canvas_col{style: 'display:none'}
                 .portrait
                   #html2canvas_output
 
           .col-xs-3.text-center.col_derecha
-            .row.row_subir_imagen#form_div
+            .row.row_subir_imagen#form_div{style: 'display:none'}
               .col-xs-12
                 = form_for :upload, url: upload_img_path,  html: { multipart: true }, remote: true do | f |
                   .file_input_div
                     %label.label_file_input{for: 'file-input'}
                       = image_tag 'pantalla_2/subir_imagen.png', class: 'file-input-img subir_imagen'
                     = f.file_field :file_input, id: 'file-input', class: 'file_input'
-            .row_cambiar_arte#cambiar_arte_div{style: 'display:none'}
-              %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
-                = image_tag 'pantalla_3/cambia_arte.png'
+            .row_cambiar_arte#cambiar_arte_div
+              %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button"}
+                = image_tag 'pantalla_3/cambia_marco.png'
             .row.aux_relative
               .col-xs-12
             .row.row_adorno_derecho
               .col-xs-12
                 = image_tag 'pantalla_2/adorno_derecho.png', class: 'adorno_derecho'
+            .row_continuar#row_continuar{style:'display:none'}
+              %button#boton_continuar{"data-toggle" => "tooltip", "title" => "Continuar"}
+                = image_tag 'pantalla_2/continuar.png'
             .row_compartir#row_compartir{style: 'display:none'}
-              %button#boton_compartir{style: 'display:none',"data-toggle" => "tooltip", "title" => "Compartir en Facebook"}
-                = image_tag 'pantalla_3/compartir-on.png'
-              %button#boton_compartir_off{disabled: 'disabled',"data-toggle" => "tooltip", "title" => "Debes seleccionar un arte para poder compartir"}
-                = image_tag 'pantalla_3/compartir-off.png'
+              %button#boton_compartir{"data-toggle" => "tooltip", "title" => "Compartir en Facebook"}
+                = image_tag 'pantalla_3/compartir-on.png', class: 'boton_compartir_r'
+              %button#boton_compartir_off{style: 'display:none',disabled: 'disabled',"data-toggle" => "tooltip", "title" => "Debes seleccionar un arte para poder compartir"}
+                = image_tag 'pantalla_3/compartir-off.png', class: 'boton_compartir_r'
               %i.fa.fa-circle-o-notch.fa-2x.fa-spin#loading_facebook_share{style: 'display:none'}
             .row.row_encender_camara
               .col-xs-12
-                %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button", style: 'display:none'}
-                  = image_tag 'pantalla_3/cambia_marco.png'
-                %button#camara_on
+                %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
+                  = image_tag 'pantalla_2/cambia_el_personaje.png'
+                %button#camara_on{style: 'display:none'}
                   = image_tag 'pantalla_2/encender_camara.png', class: 'img-responsive'
-                %button#snap{style: 'display:none'} Tomar Foto
-                %button#retake.sexyButton{:style => "display:none;"} Retomar
+                %button#snap{style: 'display:none'}
+                  = image_tag 'pantalla_3/tomar_foto.png', class: 'img-responsive'
+                %button#retake.sexyButton{:style => "display:none;"}
+                  = image_tag 'pantalla_3/retomar_foto.png', class: 'img-responsive'
+.row
+  .col-xs-12
+    = image_tag 'pantalla_2/navigation_1.png', class: 'navigation', id: 'navigation_1'
+    = image_tag 'pantalla_2/navigation_2.png', class: 'navigation', id: 'navigation_2', style: 'display:none'
+    = image_tag 'pantalla_2/navigation_3.png', class: 'navigation', id: 'navigation_3', style: 'display:none'
 
 
-  = render partial: 'partial_modal_pinturas'
+= render partial: 'partial_modal_pinturas'
 
-  = render partial: 'partial_modal_cuadros'
+= render partial: 'partial_modal_cuadros'
 

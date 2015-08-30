@@ -21,4 +21,7 @@
 //= require bootstrapValidator/bootstrapValidator
 //= require sly.min
 //= require lightbox
+//= require camera/jquery.mobile.customized.min
+//= require camera/jquery.easing.1.3
+//= require camera/camera
 //= require_tree
