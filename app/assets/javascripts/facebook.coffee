@@ -327,9 +327,11 @@ boton_continuar = ->
     $('#cambiar_arte').hide()
     $('#cambiar_arte_div').hide()
     $('#navigation_1').hide()
+    $('#texto_1').hide()
     $('#navigation_2').fadeIn(1000)
     $('#camara_on').fadeIn(1000)
     $('#form_div').fadeIn(1000)
+    $('#texto_2').fadeIn(1000)
 
 ########### PANTALLA 2 #################3
 
