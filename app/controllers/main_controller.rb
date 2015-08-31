@@ -10,12 +10,23 @@ class MainController < ApplicationController
 	end
 
 	def registrar_participante
-		@participante = Participante.new(participante_params)
-		respond_to do |format|
-			if @participante.save
-				format.html { redirect_to main_felicidades_path(sc: @participante.id) and return }
-			else
-				format.html {redirect_to root_path and return }
+		@participante = Participante.find_by(email: participante_params[:email])
+		if @participante.nil?
+			@participante = Participante.new(participante_params)
+			respond_to do |format|
+				if @participante.save
+					format.html { redirect_to main_felicidades_path(sc: @participante.id) and return }
+				else
+					format.html {redirect_to root_path and return }
+				end
+			end
+		else
+			respond_to do |format|
+				if @participante.update(participante_params)
+					format.html { redirect_to main_felicidades_path(sc: @participante.id) and return }
+				else
+					format.html {redirect_to root_path and return }
+				end
 			end
 		end
 	end
