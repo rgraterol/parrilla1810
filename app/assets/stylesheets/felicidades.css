@@ -77,6 +77,10 @@
         bottom: 3%;
         left: 22%;
     }
+    .felicidades_img {
+        margin-top: 4% !important;
+        width: 275px !important;
+    }
 }
 
 @media only screen and (max-width : 1024px) {
@@ -84,5 +88,9 @@
         position: fixed;
         bottom: 3%;
         left: 19%;
+    }
+    .felicidades_img {
+        margin-top: 4% !important;
+        width: 250px !important;
     }
 }
