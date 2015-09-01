@@ -70,7 +70,7 @@
                           .col-xs-8
                             = f.text_field :email, readonly: true,  class: 'form-control'
                         .form-group
-                          .col-xs-8.col-xs-offset-2.text-center{style: 'font-size:10px; margin-top: -10px; margin-bottom: -20px;'}
+                          .col-xs-8.col-xs-offset-2.text-center.terminos_condiciones{style: 'font-size:10px; margin-top: -10px; margin-bottom: -20px;'}
                             %p
                               Al presionar enviar estas aceptando nuestros
                               = link_to 'bases' do
@@ -79,11 +79,13 @@
                         .form-group
                           .col-xs-12
                             %button#boton_enviar{type: "submit" , style: 'display:block; margin-left: auto; margin-right: auto;'}
-                              = image_tag 'pantalla_4/enviar-on.png'
+                              = image_tag 'pantalla_4/enviar-on.png', class: 'boton_enviar_img'
+                = image_tag 'pantalla_1/adorno_btn_fb.png' , class: 'img-responsive', id: 'm_adorno_form', style: 'display:none;'
               .col-xs-12#html2canvas_col{style: 'display:none'}
                 .portrait
                   #html2canvas_output
-          = image_tag 'movil/pantalla_2/texto_artemarco.png', class: 'm_texto_artemarco', style: 'display:none'
+          = image_tag 'movil/pantalla_2/texto_artemarco.png', class: 'm_texto_artemarco', style: 'display:none', id:'m_texto_artemarco'
+          = image_tag 'movil/pantalla_3/texto_foto.png', class: 'm_texto_foto', style: 'display:none', id: 'm_texto_foto'
           .col-xs-3.text-center.col_derecha
             .row.row_subir_imagen#form_div{style: 'display:none'}
               .col-xs-12

@@ -332,18 +332,15 @@ boton_continuar = ->
     $('#camara_on').fadeIn(1000)
     $('#form_div').fadeIn(1000)
     $('#texto_2').fadeIn(1000)
-
+    if ($(window).width() < 800) && ($('#m_texto_artemarco').is(':visible'))
+      $('#m_texto_artemarco').removeClass()
+      $('#m_texto_foto').fadeIn(1000)
 ########### PANTALLA 2 #################3
 
 pantalla_2 = (data) ->
   $('#main_div').empty().hide()
   $('#loading_div').fadeOut(500)
   $('#main_div').append(data).fadeIn(1000)
-  if $(window).width() > 800
-    $('body').addClass('fadeOut animated')
-    $('body').removeClass()
-    $('body').addClass('body_pantalla_2')
-    $('body').addClass('fadeIn animated')
   $('#luces').hide()
   $('#main_div').show()
   $('#nombre_usuario_p').text(user.first_name.toUpperCase())
@@ -359,17 +356,17 @@ pantalla_2 = (data) ->
   validar_form()
   boton_continuar()
   $('.bs-pinturas-modal-lg').modal('show');
-  $(window).resize ->
-    if $(window).width() > 800
-      $('body').addClass('fadeOut animated')
-      $('body').removeClass()
-      $('body').addClass('body_pantalla_2')
-      $('body').addClass('fadeIn animated')
-    else
-      $('body').addClass('fadeOut animated')
-      $('body').removeClass()
-      $('body').addClass('body_pantalla_1')
-      $('body').addClass('fadeIn animated')
+  #$(window).resize ->
+  #  if $(window).width() > 800
+  #    $('body').addClass('fadeOut animated')
+  ##    $('body').removeClass()
+  #    $('body').addClass('body_pantalla_2')
+  #    $('body').addClass('fadeIn animated')
+  #  else
+  #    $('body').addClass('fadeOut animated')
+  #    $('body').removeClass()
+  #    $('body').addClass('body_pantalla_1')
+  #    $('body').addClass('fadeIn animated')
 
 ########### PANTALLA 3 ################
 
@@ -404,8 +401,7 @@ facebook_share = (url_imagen) ->
       $('#canvas_video_div').hide()
       $('#formulario_div').fadeIn(1500)
       $('#form_div').fadeOut(1000)
-
-
+      $('#m_adorno_form').addClass('m_adorno_form')
 
     else if response and response.error_code == 4201
       console.log( response )
@@ -428,6 +424,7 @@ facebook_share = (url_imagen) ->
       $('#formulario_div').fadeIn(1500)
       $('#form_div').fadeOut(1000)
       $('.row_encender_camara').hide()
+      $('#m_adorno_form').addClass('m_adorno_form')
 
     return
 
@@ -435,6 +432,7 @@ facebook_share = (url_imagen) ->
 upload_pic = ->
 
   $('#boton_compartir').click ->
+    $('#m_texto_foto').hide()
     $('#boton_compartir').hide()
     $('#boton_compartir_off').show()
     $('#loading_facebook_share').show()

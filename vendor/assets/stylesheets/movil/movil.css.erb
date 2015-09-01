@@ -1,9 +1,20 @@
 @media screen and (max-width: 768px) and (orientation: portrait) {
+    html, body {
+        overflow: hidden;
+    }
+    body {
+        position: relative
+    }
+    html.touch body {
+        overflow:hidden;
+    }
     .vector_smart {
         width: 700px;
     }
 
-
+    .aux_relative {
+        display: none;
+    }
     .vector_smart_row .img-responsive {
         display: inline;
         max-width: none;
@@ -35,7 +46,7 @@
         display: none !important;
     }
     .m_row_bottom {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         height: 10vh;
         display: block !important;
@@ -125,10 +136,72 @@
         left: 50%;
         margin-left: -200px;
     }
+    .row_encender_camara {
+        pointer-events: none;
+    }
 
 
     .navigation {
         display: none !important;
+    }
+
+    #camara_on {
+        display: none !important;
+    }
+    #snap {
+        display: none !important;
+    }
+    .subir_imagen {
+        display: none !important;
+    }
+
+    .row_subir_imagen {
+        position: fixed;
+        top: 27%;
+        left: 80%;
+    }
+
+    .m_texto_foto {
+        position: fixed;
+        top: 65%;
+        width: 400px;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    .subir_imagen_m {
+        display: block !important;
+    }
+    .ci-main .ci-tool {
+        left: 20%;
+        top: 25%;
+        z-index: 999;
+    }
+
+    .row_compartir {
+        position: fixed;
+        top: 80%;
+        left: 45%;
+        margin-left: -250px;
+    }
+
+    .boton_compartir_r {
+        width: 500px;
+    }
+
+    .formulario {
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        margin-left: -180px;
+        height: 400px;
+    }
+    .m_adorno_form {
+        display: block !important;
+        position: fixed;
+        top: 76%;
+        left: 50%;
+        margin-left: -150px;
     }
 
 }
@@ -152,6 +225,17 @@
         top: 20%;
     }
 
+    .row_subir_imagen {
+        position: fixed;
+        top: 25%;
+        left: 82%;
+    }
+
+    .ci-main .ci-tool {
+        left: 15%;
+        top: 20%;
+    }
+
 
 
 }
@@ -159,6 +243,11 @@
 @media screen and (max-width: 500px) and (orientation: portrait) {
     .vector_smart {
         width: 450px;
+        margin-bottom: -25px;
+    }
+
+    #boton_facebook_row {
+        margin-top: 0px;
     }
 
     .m_video_img {
@@ -198,7 +287,6 @@
     .canvas,
     .pic_frame,
     .arte,
-    .formulario,
     .ci-main-canvas .ci-canvas-wrapper,
     .pintura00,
     .pintura01,
@@ -245,25 +333,73 @@
 
     .m_texto_artemarco {
         top: 62%;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    .m_texto_foto {
+        position: fixed;
+        top: 62%;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
     }
 
-    #camara_on {
-        display: none !important;
-    }
-    #snap {
-        display: none !important;
-    }
+
     .row_subir_imagen {
         position: fixed;
         left: 82%;
         top: 20%;
     }
 
-    .subir_imagen {
-        display: none !important;
-    }
+
     .subir_imagen_m {
         display: block !important;
         width: 50px;
+    }
+
+    .ci-main .ci-tool {
+        left: 5%;
+        top: 21%;
+    }
+    .boton_compartir_r {
+        width: 300px;
+    }
+    .row_compartir {
+        margin-left: -150px;
+    }
+    .formulario {
+        height: 300px;
+        font-size: 10px !important;
+        top: 20%;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    .terminos_condiciones {
+        font-size: 8px !important;
+    }
+    .title_formulario {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .formulario .form-control {
+        font-size: 12px !important;
+    }
+
+    .form-control {
+        height: 23px;
+        padding: 3px 7px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .boton_enviar_img {
+        width: 150px;
+    }
+    .m_adorno_form {
+        width: 200px;
+        margin-left: -100px;
     }
 }
