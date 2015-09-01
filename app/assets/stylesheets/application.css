@@ -16,4 +16,5 @@
  *= require lightbox
  *= require camera/camera
  *= require_self
+ *= require movil/movil.css.erb
  */

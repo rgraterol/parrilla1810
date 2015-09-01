@@ -7,16 +7,21 @@
             .row.vector_smart_row#vector_smart_row
               .col-xs-12.text-center
                 = image_tag 'pantalla_1/vector_smart.png', alt: 'Nos une la parrilla', class: 'img-responsive vector_smart'
+            .row.m_video_promocional#m_video_promocional{style: 'display:none;'}
+              .col-xs-12.text-center
+                %button.m_boton_video#m_boton_video
+                  = image_tag 'movil/pantalla_1/ver_video_promocional.png', class: 'img-responsive m_video_img'
             .row#frase_inicial_row
               .col-xs-12.text-center
                 = image_tag 'pantalla_1/frase_inicial.png', class: 'img-responsive frase_inicial'
+                = image_tag 'movil/pantalla_1/texto_home.png', class: 'm_texto_home', style: 'display:none;'
 
             .row#boton_facebook_row
               .col-xs-12.text-center
                 %button.boton_facebook#boton_facebook
-                  = image_tag 'pantalla_1/facebook_connect.png'
+                  = image_tag 'pantalla_1/facebook_connect.png', class: 'btn_facebook_connect'
                 %button.boton_facebook#boton_facebook_off{style: 'display:none', disabled: 'disabled'}
-                  = image_tag 'pantalla_1/facebook_connect_off.png'
+                  = image_tag 'pantalla_1/facebook_connect_off.png', class: 'btn_facebook_connect'
             .row#boton_facebook_loading{style: 'display:none'}
               .col-xs-12.text-center
                 %i.fa.fa-circle-o-notch.fa-2x.fa-spin

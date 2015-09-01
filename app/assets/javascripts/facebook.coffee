@@ -339,10 +339,11 @@ pantalla_2 = (data) ->
   $('#main_div').empty().hide()
   $('#loading_div').fadeOut(500)
   $('#main_div').append(data).fadeIn(1000)
-  $('body').addClass('fadeOut animated')
-  $('body').removeClass()
-  $('body').addClass('body_pantalla_2')
-  $('body').addClass('fadeIn animated')
+  if $(window).width() > 800
+    $('body').addClass('fadeOut animated')
+    $('body').removeClass()
+    $('body').addClass('body_pantalla_2')
+    $('body').addClass('fadeIn animated')
   $('#luces').hide()
   $('#main_div').show()
   $('#nombre_usuario_p').text(user.first_name.toUpperCase())
@@ -358,6 +359,17 @@ pantalla_2 = (data) ->
   validar_form()
   boton_continuar()
   $('.bs-pinturas-modal-lg').modal('show');
+  $(window).resize ->
+    if $(window).width() > 800
+      $('body').addClass('fadeOut animated')
+      $('body').removeClass()
+      $('body').addClass('body_pantalla_2')
+      $('body').addClass('fadeIn animated')
+    else
+      $('body').addClass('fadeOut animated')
+      $('body').removeClass()
+      $('body').addClass('body_pantalla_1')
+      $('body').addClass('fadeIn animated')
 
 ########### PANTALLA 3 ################
 

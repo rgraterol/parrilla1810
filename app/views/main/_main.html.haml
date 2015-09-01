@@ -83,7 +83,7 @@
               .col-xs-12#html2canvas_col{style: 'display:none'}
                 .portrait
                   #html2canvas_output
-
+          = image_tag 'movil/pantalla_2/texto_artemarco.png', class: 'm_texto_artemarco', style: 'display:none'
           .col-xs-3.text-center.col_derecha
             .row.row_subir_imagen#form_div{style: 'display:none'}
               .col-xs-12
@@ -91,10 +91,12 @@
                   .file_input_div
                     %label.label_file_input{for: 'file-input'}
                       = image_tag 'pantalla_2/subir_imagen.png', class: 'file-input-img subir_imagen'
+                      = image_tag 'movil/pantalla_3/m_subir_imagen.png', class: 'file-input-img subir_imagen_m', style: 'display:none'
                     = f.file_field :file_input, id: 'file-input', class: 'file_input'
             .row_cambiar_arte#cambiar_arte_div
               %button#cambiar_marco{"data-target" => ".bs-cuadros-modal-lg", "data-toggle" => "modal", :type => "button"}
-                = image_tag 'pantalla_3/cambia_marco.png'
+                = image_tag 'pantalla_3/cambia_marco.png', class: 'cambiar_marco_img'
+                = image_tag 'movil/pantalla_2/m_cambia_marco.png', class: 'cambiar_marco_m', style: 'display:none'
             .row.aux_relative
               .col-xs-12
             .row.row_adorno_derecho
@@ -102,7 +104,7 @@
                 = image_tag 'pantalla_2/adorno_derecho.png', class: 'adorno_derecho'
             .row_continuar#row_continuar{style:'display:none'}
               %button#boton_continuar{"data-toggle" => "tooltip", "title" => "Continuar"}
-                = image_tag 'pantalla_2/continuar.png'
+                = image_tag 'pantalla_2/continuar.png', class: 'boton_continuar_r'
             .row_compartir#row_compartir{style: 'display:none'}
               %button#boton_compartir{"data-toggle" => "tooltip", "title" => "Compartir en Facebook"}
                 = image_tag 'pantalla_3/compartir-on.png', class: 'boton_compartir_r'
@@ -112,7 +114,8 @@
             .row.row_encender_camara
               .col-xs-12
                 %button#cambiar_arte{"data-target" => ".bs-pinturas-modal-lg", "data-toggle" => "modal", :type => "button"}
-                  = image_tag 'pantalla_2/cambia_el_personaje.png'
+                  = image_tag 'pantalla_2/cambia_el_personaje.png', class: 'cambiar_personaje_img'
+                  = image_tag 'movil/pantalla_2/m_cambia_arte.png', class: 'cambiar_arte_m', style: 'display:none'
                 %button#camara_on{style: 'display:none'}
                   = image_tag 'pantalla_2/encender_camara.png', class: 'img-responsive'
                 %button#snap{style: 'display:none'}
