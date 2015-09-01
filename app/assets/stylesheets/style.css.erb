@@ -8,23 +8,42 @@
     overflow-x: hidden;
 }
 
-/*.body_pantalla_2{
-    background: url(<%= asset_path 'pantalla_2/bg_2.png' %>) no-repeat center center fixed;
+.logo_bg {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    width: 30%;
+}
+
+.body_pantalla_2{
+    background: url(<%= asset_path 'pantalla_1/bg_1.jpg' %>) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     margin-top: 0%;
     overflow-x: hidden;
-}*/
+}
 
 .vcenter {
     min-height: 100%;
-    min-height: 90vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.help-block {
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 10px;
 }
 
 .luces {
@@ -152,6 +171,28 @@ a.thumbnail:focus, a.thumbnail:hover {
 #container {
     position: relative;
 }
+/* Preloader */
+#preloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff; /* change if the mask should have another color then white */
+    z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+    width: 450px;
+    height: 213px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image:url(<%= asset_path 'pantalla_1/status.gif' %>); /* path to your loading animation */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+}
 
 
 @media only screen and (min-width : 1024px) and (max-width: 1280px) and (min-height: 800px) {
@@ -161,9 +202,10 @@ a.thumbnail:focus, a.thumbnail:hover {
     }
     .row_bottom {
     }
+
 }
 
-@media only screen and (max-width: 1024px)   {
+@media only screen and (min-width: 800px) and (max-width: 1024px)   {
     .portrait {
         left: 15%;
     }
@@ -218,7 +260,7 @@ a.thumbnail:focus, a.thumbnail:hover {
 
 
 }
-@media only screen and (max-width: 800px)   {
+@media only screen and (min-width: 601px)  and (max-width: 800px)   {
     .portrait {
         left: 3%;
     }
