@@ -8,6 +8,7 @@
     html.touch body {
         overflow:hidden;
     }
+
     .m_row_bottom {
         display: none !important;
     }
@@ -184,7 +185,7 @@
     .row_compartir {
         position: fixed;
         top: 80%;
-        left: 45%;
+        left: 50%;
         margin-left: -250px;
     }
 
@@ -205,6 +206,21 @@
         top: 76%;
         left: 50%;
         margin-left: -150px;
+    }
+
+    #status {
+        display: none;
+    }
+    #preloader {
+        display: none;
+    }
+
+    .zoom-range {
+        position: fixed;
+        top: 58%;
+        left: 50%;
+        margin-left: -200px;
+        width: 400px !important;
     }
 
 }
@@ -406,10 +422,26 @@
         width: 200px;
         margin-left: -100px;
     }
-    #status {
-        display: none;
+    #focal {
+        position: absolute;
+        z-index: 1;
+        width: 200px;
+        height: 200px;
     }
-    #preloader {
-        display: none;
+
+    .img_container {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .zoom-range {
+        top: 60%;
+        margin-left: -100px;
+        width: 200px !important;
+    }
+    #loading_facebook_share {
+        position: fixed;
+        left: 50%;
+        margin-left: -0.5em;
     }
 }

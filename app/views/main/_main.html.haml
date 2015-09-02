@@ -35,8 +35,8 @@
                         %video.video#video{:autoplay => "", :height => "360", :width => "360"}
                         %canvas.canvas.ui-widget-content#canvas{:height => "360", :style => "", :width => "360"}
                       #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
-                    #focal
-                      #img_container
+                    #img_container{style: 'position:relative;'}
+                %input.zoom-range#zoom-range{:type => "range", style: 'display:none;'}
                 .formulario#formulario_div{style: 'display:none'}
                   .row
                     .col-xs-12
