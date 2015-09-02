@@ -13,6 +13,7 @@
         FB.init({
           appId      : '420916978100363',
           xfbml      : true,
+          status     : true,
           version    : 'v2.4'
         });
       };
@@ -29,18 +30,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body.body_pantalla_1
-    .all
-      #preloader
-        #status  
+    .all_full_wrapper
       = yield
 
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
-/ Preloader
-:javascript
-  //<![CDATA[
-  $(window).load(function() { // makes sure the whole site is loaded
-      $('#status').fadeOut(); // will first fade out the loading animation
-      $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-      $('body').delay(350).css({'overflow':'visible'});
-  })
-  //]]>

@@ -35,7 +35,7 @@
                         %video.video#video{:autoplay => "", :height => "360", :width => "360"}
                         %canvas.canvas.ui-widget-content#canvas{:height => "360", :style => "", :width => "360"}
                       #img_canvas_output.ci-canvas-wrapper{style:'display:none'}
-                    #img_container{style: 'position:relative;'}
+                    #img_container{style: 'position:absolute;'}
                 %input.zoom-range#zoom-range{:type => "range", style: 'display:none;'}
                 .formulario#formulario_div{style: 'display:none'}
                   .row
@@ -76,7 +76,7 @@
                           .col-xs-8.col-xs-offset-2.text-center.terminos_condiciones{style: 'font-size:10px; margin-top: -5px; margin-bottom: -10px;'}
                             %p
                               Al presionar enviar estas aceptando nuestros
-                              = link_to 'bases' do
+                              = link_to '/privacy.pdf' do
                                 términos y condiciones
                               de uso.
                         .form-group

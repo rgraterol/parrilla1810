@@ -232,6 +232,7 @@ readURL = (input) ->
             increment: 0.1
             animate: false
             focal: e
+          return
       else
         $('.ci-image-wrapper img').show()
         $('#uploaded_img').cropimg
@@ -247,6 +248,7 @@ readURL = (input) ->
           textBtnTipRTW: 'Ajustar al ancho del contenedor'
           textBtnTipRTH: 'Ajustar a la altura del contenedor'
           onChange: ->
+        return
     reader.readAsDataURL input.files[0]
   return
 
@@ -393,7 +395,6 @@ facebook_share = (url_imagen) ->
   $('#loading_facebook_share').show()
   FB.ui {
     method: 'feed'
-    display: 'page'
     link: 'http://nosunelaparrilla.cl'
     caption: 'La historia de Chile ya conoce mi nombre como prócer de la parrilla.'
     picture: url_imagen
@@ -415,14 +416,18 @@ facebook_share = (url_imagen) ->
 
     else if response and response.error_code == 4201
       console.log( response )
-      #$('#canvas_video_div').show()
-      #$('#html2canvas_output').empty()
-      #$('#html2canvas_col').hide()
-      #console.log 'User cancelled: ' + decodeURIComponent(response.error_message)
+      $('#row_compartir').fadeOut(1000)
+      $('#navigation_2').hide()
+      $('#navigation_3').fadeIn(1500)
+      $('.portrait').addClass('fadeOut')
+      $('.portrait').hide()
+      $('.row_encender_camara').hide()
+      $('#canvas_video_div').addClass('fadeOut')
+      $('#canvas_video_div').hide()
+      $('#formulario_div').fadeIn(1500)
+      $('#form_div').fadeOut(1000)
+      $('#m_adorno_form').addClass('m_adorno_form')
     else
-      #$('#canvas_video_div').show()
-      #$('#html2canvas_output').empty()
-      #$('#html2canvas_col').hide()
       console.log 'Closed ' + JSON.stringify(response)
       $('#row_compartir').fadeOut(1000)
       $('#navigation_2').hide()
@@ -466,15 +471,15 @@ upload_pic = ->
           img: dataURL
           email: user.email
         success: (data) ->
-          if data == 'max_pics_reached'
-            console.log 'max_pics_reached'
-          else if data == 'false'
-            $('#canvas_video_div').show()
-            $('#html2canvas_col').show()
-            $('#loading_facebook_share').hide()
-          else
-            img_url =  data
-            facebook_share(img_url)
+          #if data == 'max_pics_reached'
+          #  console.log 'max_pics_reached'
+          #else if data == 'false'
+          #  $('#canvas_video_div').show()
+          #  $('#html2canvas_col').show()
+          #  $('#loading_facebook_share').hide()
+          #else
+          img_url =  data
+          facebook_share(img_url)
         error: (data) ->
           console.log 'ERROR 2AJX'
       return

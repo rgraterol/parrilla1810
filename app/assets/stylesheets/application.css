@@ -16,17 +16,601 @@
  *= require lightbox
  *= require camera/camera
  *= require_self
- *= require movil/movil.css.erb
  */
 
 @media only screen and (max-width: 568px) and (min-width: 320px) and (max-height: 568px) and (orientation : landscape)  {
-    .all { display:none !important; }
+    .all_full_wrapper { display:none !important; }
 
 }
 @media only screen and (max-width: 480px) and (min-width: 480px) and (max-height: 320px) and (orientation : landscape) {
-    .all { display:none !important; }
+    .all_full_wrapper { display:none !important; }
 }
 
 @media screen and (max-width: 768px)  and (orientation: landscape){
-    .all { display:none !important; }
+    .all_full_wrapper { display:none !important; }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    html, body {
+        overflow: hidden;
+    }
+    body {
+        position: relative
+    }
+    html.touch body {
+        overflow:hidden;
+    }
+
+    .row_
+    .row_bottom {
+        display: none !important;
+    }
+
+    .vector_smart {
+        width: 700px;
+    }
+    .logo_bg {
+        width: 40%;
+    }
+
+    .aux_relative {
+        display: none;
+    }
+    .vector_smart_row .img-responsive {
+        display: inline;
+        max-width: none;
+
+    }
+
+    .frase_inicial {
+        display:none !important;
+    }
+
+    .m_video_promocional {
+        display: inline !important;
+        margin-bottom: 15px;
+    }
+
+    .m_video_img {
+        width: 190px;
+    }
+
+    .m_texto_home {
+        display: inline !important;
+    }
+
+    #boton_facebook_row {
+        margin-top: 15px;
+    }
+
+    #adorno_btn_fb_row {
+        display: none !important;
+    }
+    .m_row_bottom {
+        position: fixed;
+        bottom: 0;
+        height: 10vh;
+        display: block !important;
+        margin-left: auto;
+        margin-top: auto;
+        width: 100%;
+        background-color: #fff;
+        border-top: 10px solid rgba(107, 105, 105, 0.65);;
+    }
+    .m_productos_parrilleros {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4%;
+    }
+
+    /*********************** PANTALLA 2 **********************/
+    .luces {
+        display: inline !important;
+    }
+    .portrait {
+        position: fixed;
+        left: 50%;
+        top: 25%;
+        margin-left: -180px;
+    }
+
+    .row_nombre_usuario {
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        margin-left: -135px;
+        border-bottom: 2px solid #9e9d9d;
+    }
+
+    .nombre_usuario {
+        display: inline;
+        color: #0E388F;
+    }
+    .apellido_usuario {
+        display: inline;
+        margin-left: 10px;
+        color: #0E388F;
+    }
+    .adorno_izquierdo {
+        display: none !important;
+    }
+
+    .adorno_derecho {
+        display: none !important;
+    }
+    .row_texto {
+        display: none !important;
+    }
+    .row_continuar {
+        position: fixed;
+        top: 80%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .cambiar_personaje_img {
+        display: none;
+    }
+    .cambiar_marco_img {
+        display: none;
+    }
+    .cambiar_marco_m {
+        display: block !important;
+        position: fixed;
+        top: 25%;
+        left: 79%;
+    }
+
+    .cambiar_arte_m {
+        display: block !important;
+        position: fixed;
+        top: 25%;
+        left: 8%;
+    }
+
+    .m_texto_artemarco {
+        display: inline !important;
+        position: fixed;
+        top: 65%;
+        width: 400px;
+        left: 50%;
+        margin-left: -200px;
+    }
+    .row_encender_camara {
+        pointer-events: none;
+    }
+
+
+    .navigation {
+        display: none !important;
+    }
+
+    #camara_on {
+        display: none !important;
+    }
+    #snap {
+        display: none !important;
+    }
+    .subir_imagen {
+        display: none !important;
+    }
+
+    .row_subir_imagen {
+        position: fixed;
+        top: 27%;
+        left: 80%;
+    }
+
+    .m_texto_foto {
+        position: fixed;
+        top: 65%;
+        width: 400px;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    .subir_imagen_m {
+        display: block !important;
+    }
+    .ci-main .ci-tool {
+        left: 20%;
+        top: 25%;
+        z-index: 999;
+    }
+
+    .row_compartir {
+        position: fixed;
+        top: 80%;
+        left: 50%;
+        margin-left: -250px;
+    }
+
+    .boton_compartir_r {
+        width: 500px;
+    }
+
+    .formulario {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        margin-left: -180px;
+        height: 400px;
+    }
+    .m_adorno_form {
+        display: block !important;
+        position: fixed;
+        top: 70%;
+        left: 50%;
+        margin-left: -150px;
+    }
+
+    #status {
+        display: none;
+    }
+    #preloader {
+        display: none;
+    }
+
+    .zoom-range {
+        position: fixed;
+        top: 58%;
+        left: 50%;
+        margin-left: -200px;
+        width: 400px !important;
+    }
+    .texto_derecha,
+    .img_adorno_derecho,
+    .img_adorno_izquierdo,
+    .texto_izquierda,
+    .imagen_galeria,
+    .felicidades_img {
+        display: none !important;
+    }
+
+    .m_felicidades {
+        display: block !important;
+        position: fixed;
+        top: 65%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+    }
+
+    .row_galeria_m {
+        display: inline !important;
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+    }
+    .texto_m {
+        display: inline !important;
+        position: fixed;
+        top: 72%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0%);
+        -moz-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        -o-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+    }
+
+    .pagespan {
+        width: 520px !important;
+    }
+    .frame {
+        width: 520px !important;
+    }
+
+    .adorno_galeria {
+        display: none;
+    }
+
+    .galeria_1810 {
+        display: block !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+
+    .row_nombre_usuario {
+        top: 12%;
+    }
+    .portrait {
+        top: 20%;
+    }
+
+    .cambiar_marco_m {
+        top: 20%;
+        left: 82%;
+    }
+
+    .cambiar_arte_m {
+        left: 5%;
+        top: 20%;
+    }
+
+    .row_subir_imagen {
+        position: fixed;
+        top: 25%;
+        left: 82%;
+    }
+
+    .ci-main .ci-tool {
+        left: 15%;
+        top: 20%;
+    }
+
+    .m_adorno_form {
+        top: 78%;
+    }
+
+    .row_galeria_m {
+        top: 12%;
+    }
+    .m_felicidades {
+        top: 67%
+    }
+    .texto_m {
+        width: 65%;
+        top: 74%;
+    }
+    .ver_anterior {
+        width: 80%;
+    }
+    .ver_siguiente {
+        width: 80%;
+    }
+    .boton_siguiente_div {
+        right: -110px;
+    }
+    .boton_anterior_div {
+        left: -100px;
+    }
+    .frame {
+        width: 400px !important;
+    }
+    .pagespan {
+        width: 400px !important;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait) {
+    .vector_smart {
+        width: 450px;
+        margin-bottom: -25px;
+    }
+
+    #boton_facebook_row {
+        margin-top: 0px;
+    }
+
+    .m_video_img {
+        width: 120px;
+    }
+
+    .m_texto_home {
+        width: 300px;
+    }
+
+    .btn_facebook_connect {
+        width: 120px;
+    }
+    .m_row_bottom {
+        height: 12vh;
+        border-top: 5px solid rgba(107, 105, 105, 0.65);
+    }
+
+    .m_productos_parrilleros {
+        margin-top: 4vh;
+        width: 250px;
+    }
+    .row_nombre_usuario {
+        margin-left: -100px;
+    }
+
+    .nombre_usuario {
+        font-size: 30px;
+    }
+
+    .apellido_usuario {
+        font-size: 30px;
+        margin-left: 5px;
+    }
+
+    .video,
+    .canvas,
+    .arte,
+    .ci-main-canvas .ci-canvas-wrapper,
+    .pintura00,
+    .pintura01,
+    .pintura02,
+    .pintura03,
+    .pintura04,
+    .pintura05,
+    .pintura06,
+    .frame00,
+    .frame01,
+    .frame02,
+    .frame03,
+    .frame04,
+    .frame05,
+    .frame06
+    {
+        width: 200px !important;
+        height: 200px !important;
+        background-size: 100%;
+        min-width: 200px !important;
+        pointer-events: none;
+    }
+
+    .portrait {
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        margin-left: -100px;
+    }
+
+    .cambiar_arte_m {
+        width: 50px;
+        left: 3%;
+    }
+    .cambiar_marco_m {
+        left: 84%;
+        width: 50px;
+    }
+    .row_continuar {
+        margin-left: -40px;
+    }
+
+    .boton_continuar_r {
+        width: 80px;
+    }
+
+    .m_texto_artemarco {
+        top: 62%;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    .m_texto_foto {
+        position: fixed;
+        top: 62%;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+
+
+    .row_subir_imagen {
+        position: fixed;
+        left: 82%;
+        top: 20%;
+    }
+
+
+    .subir_imagen_m {
+        display: block !important;
+        width: 50px;
+    }
+
+    .ci-main .ci-tool {
+        left: 5%;
+        top: 21%;
+    }
+    .boton_compartir_r {
+        width: 300px;
+    }
+    .row_compartir {
+        margin-left: -150px;
+    }
+    .formulario {
+        height: 320px;
+        font-size: 10px !important;
+        top: 25%;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    .terminos_condiciones {
+        font-size: 8px !important;
+    }
+    .title_formulario {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .formulario .form-control {
+        font-size: 12px !important;
+    }
+
+    .form-control {
+        height: 23px;
+        padding: 3px 7px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .boton_enviar_img {
+        width: 150px;
+    }
+    .m_adorno_form {
+        width: 200px;
+        margin-left: -100px;
+        top: 80%;
+    }
+    #focal {
+        position: absolute;
+        z-index: 1;
+        width: 200px;
+        height: 200px;
+    }
+
+    .img_container {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .zoom-range {
+        top: 60%;
+        margin-left: -100px;
+        width: 200px !important;
+    }
+
+    #loading_facebook_share {
+        position: fixed;
+        left: 50%;
+        margin-left: -0.5em;
+        top: 75%;
+    }
+
+    .imagen_user {
+        width: 200px;
+        height: 200px;
+    }
+    .m_felicidades {
+        width: 60%;
+        top: 65%;
+    }
+    .frame {
+        width: 200px !important;
+    }
+    .pagespan {
+        width: 200px !important;
+    }
+    .galeria_pic {
+        width: 200px;
+        height: 200px;
+        margin-top: -5%;
+
+    }
+    .galeria_1810 {
+        margin-top: -25%;
+    }
+    .ver_anterior {
+        width: 50%;
+    }
+    .ver_siguiente {
+        width: 50%;
+    }
+
+    .boton_anterior_div {
+        left: -85px;
+    }
+    .boton_siguiente_div {
+        right: -85px;
+    }
 }
