@@ -1,14 +1,10 @@
 .galeria
-  .row
-    .col-xs-12
-      .luces_galeria
-
+  = image_tag 'pantalla_1/logo_bg.png', class: 'logo_bg img-responsive'
   .vcenter_galeria
-    .container
+    .container.container_galeria
       .row
         .col-xs-12
           .pagespan
-            = image_tag 'galeria/logo_galeria.png', class: 'img-responsive logo_galeria'
       .row
         .col-xs-12
           .wrap
@@ -22,7 +18,8 @@
                 %ul.slidee
                   - index = 0
                   - i = 0
-                  - while index < @img.length
+                  - puts(@img)
+                  - while index < @img.length - 1
                     - if (i % 2) == 0
                       %li
                         = link_to "/#{@img[index][:id]}/#{@img[index][:img]}.png", "data-lightbox" => "galeria", "data-title"=>"Nos une la Parrilla" do

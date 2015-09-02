@@ -8,6 +8,9 @@
     html.touch body {
         overflow:hidden;
     }
+    .m_row_bottom {
+        display: none !important;
+    }
     .vector_smart {
         width: 700px;
     }
@@ -285,7 +288,6 @@
 
     .video,
     .canvas,
-    .pic_frame,
     .arte,
     .ci-main-canvas .ci-canvas-wrapper,
     .pintura00,
@@ -300,12 +302,14 @@
     .frame02,
     .frame03,
     .frame04,
-    .frame05
+    .frame05,
+    .frame06
     {
         width: 200px !important;
         height: 200px !important;
         background-size: 100%;
         min-width: 200px !important;
+        pointer-events: none;
     }
 
     .portrait {
@@ -401,5 +405,11 @@
     .m_adorno_form {
         width: 200px;
         margin-left: -100px;
+    }
+    #status {
+        display: none;
+    }
+    #preloader {
+        display: none;
     }
 }
