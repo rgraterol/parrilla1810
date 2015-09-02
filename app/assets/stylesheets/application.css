@@ -323,7 +323,9 @@
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
-
+    .all_full_wrapper {
+        overflow-x: visible;
+    }
     .row_nombre_usuario {
         top: 12%;
     }
@@ -389,6 +391,9 @@
 }
 
 @media screen and (max-width: 500px) and (orientation: portrait) {
+    .all_full_wrapper {
+        overflow-x: visible !important;
+    }
     .vector_smart {
         width: 450px;
         margin-bottom: -25px;
