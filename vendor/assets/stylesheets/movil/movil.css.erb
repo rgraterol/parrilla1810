@@ -1,12 +1,16 @@
 @media screen and (max-width: 768px) and (orientation: portrait) {
     html, body {
-        overflow: hidden;
+        overflow-x: hidden !important;
+        overflow-y: hidden !important;
     }
+    .all,
     body {
-        position: relative
+        position: relative !important;
     }
+    .all.touch,
+    .all,
     html.touch body {
-        overflow:hidden;
+        overflow:hidden !important;
     }
     .row_bottom {
         display: none !important;

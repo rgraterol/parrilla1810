@@ -207,7 +207,6 @@ hide_avisos = ->
   $('#aviso_tamano').hide()
 
 
-
 readURL = (input) ->
   if input.files and input.files[0]
     reader = new FileReader
@@ -219,11 +218,12 @@ readURL = (input) ->
             $(ui.draggable).appendTo($(this));
             $(this).appendTo('#img_container');
         $('#zoom-range').fadeIn(1500)
-        $section = $('#focal')
+        $section = $('#img_container')
         $panzoom = $section.find('.panzoom').panzoom
           $zoomRange: $("#zoom-range")
           contain: true
           disablePan: false
+          minScale: 0.01
         $panzoom.parent().on 'mousewheel.focal', (e) ->
           e.preventDefault()
           delta = e.delta or e.originalEvent.wheelDelta
@@ -232,7 +232,6 @@ readURL = (input) ->
             increment: 0.1
             animate: false
             focal: e
-          return
       else
         $('.ci-image-wrapper img').show()
         $('#uploaded_img').cropimg
@@ -248,8 +247,6 @@ readURL = (input) ->
           textBtnTipRTW: 'Ajustar al ancho del contenedor'
           textBtnTipRTH: 'Ajustar a la altura del contenedor'
           onChange: ->
-      return
-
     reader.readAsDataURL input.files[0]
   return
 
@@ -396,6 +393,7 @@ facebook_share = (url_imagen) ->
   $('#loading_facebook_share').show()
   FB.ui {
     method: 'feed'
+    display: 'page'
     link: 'http://nosunelaparrilla.cl'
     caption: 'La historia de Chile ya conoce mi nombre como prócer de la parrilla.'
     picture: url_imagen
