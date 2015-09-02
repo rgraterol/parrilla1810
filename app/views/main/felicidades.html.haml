@@ -3,6 +3,10 @@
   .row
     .col-xs-12.col-lg-12.col-md-12
       .container
+        .row.row_galeria_m{style: 'display:none'}
+          .col-xs-12
+            = link_to main_galeria_path do
+              = image_tag 'movil/felicidades/visita_galeria_top.png', class: 'img-responsive m_visita_galeria'
         .row
           .col-xs-3
             .row.aux_relative
@@ -27,6 +31,8 @@
 .row
   .col-xs-12
     = image_tag 'felicidades/felicidades.png', class: 'navigation felicidades_img', id: 'navigation_1'
+    = image_tag 'movil/felicidades/felicidades_m.png', class: 'm_felicidades', id: 'm_felicidades', style: 'display:none'
+    = image_tag 'movil/felicidades/texto_m.png', class: 'texto_m', id: 'texto_m', style: 'display:none'
 .row.row_bottom#row_bottom
   .col-xs-3.text-center
     = link_to 'bases' do
@@ -38,5 +44,8 @@
     = link_to main_galeria_path do
       = image_tag 'pantalla_2/ver_galeria.png', class: 'ver_bases'
 
+.row.m_row_bottom{style: 'display:none;'}
+  .col-xs-12
+    = image_tag 'movil/pantalla_1/productos_parrilleros.png', class: 'm_productos_parrilleros'
 
 

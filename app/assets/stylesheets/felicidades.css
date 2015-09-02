@@ -11,6 +11,8 @@
 
 .imagen_user {
     position: absolute;
+    width: 360px;
+    height: 360px
 }
 
 .vcenter_full {
