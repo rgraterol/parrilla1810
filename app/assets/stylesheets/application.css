@@ -618,4 +618,16 @@
     .boton_siguiente_div {
         right: -85px;
     }
+
+    div.ui-datepicker{
+        font-size:10px;
+    }
+    .datepicker.dropdown-menu {
+        width: 45% !important;
+        font-size: 10px !important;
+    }
+    .datepicker table tr td span {
+        height: 35px !important;
+        line-height: 30px !important;
+    }
 }
