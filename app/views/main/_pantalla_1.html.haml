@@ -9,7 +9,7 @@
                 = image_tag 'pantalla_1/vector_smart.png', alt: 'Nos une la parrilla', class: 'img-responsive vector_smart'
             .row.m_video_promocional#m_video_promocional{style: 'display:none;'}
               .col-xs-12.text-center
-                %button.m_boton_video#m_boton_video
+                %a.m_boton_video#m_boton_video{href: 'https://www.youtube.com/watch?v=mm1dIccKlAc'}
                   = image_tag 'movil/pantalla_1/ver_video_promocional.png', class: 'img-responsive m_video_img'
             .row#frase_inicial_row
               .col-xs-12.text-center
@@ -28,3 +28,5 @@
             .row#adorno_btn_fb_row
               .col-xs-12.text-center
                 = image_tag 'pantalla_1/adorno_btn_fb.png'
+
+%a#YTV.youtube{:href => "https://www.youtube.com/watch?v=mm1dIccKlAc"}

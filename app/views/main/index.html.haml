@@ -24,13 +24,14 @@
       = image_tag 'pantalla_2/ver_galeria.png', class: 'ver_bases'
 
 .row.m_row_bottom{style: 'display:none;'}
-  .col-xs-12
+  .col-xs-3
+    = link_to '/privacy.pdf' do
+      = image_tag 'pantalla_2/ver_bases.png', class: 'ver_bases_m'
+  .col-xs-6
     = image_tag 'movil/pantalla_1/productos_parrilleros.png', class: 'm_productos_parrilleros'
-
-
-
-
-
+  .col-xs-3
+    = link_to main_galeria_path do
+      = image_tag 'pantalla_2/ver_galeria.png', class: 'ver_galeria_m'
 
 
   = render partial: 'modal_parrilleros'
